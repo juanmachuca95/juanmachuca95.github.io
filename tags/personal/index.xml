@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All Posts - Juan Gabriel Machuca</title>
-        <link>http://localhost/posts/</link>
-        <description>All Posts | Juan Gabriel Machuca</description>
-        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 30 Nov 2022 22:04:08 -0300</lastBuildDate><atom:link href="http://localhost/posts/" rel="self" type="application/rss+xml" /><item>
+        <title>Personal - Tag - Juan Gabriel Machuca</title>
+        <link>http://localhost/tags/personal/</link>
+        <description>Personal - Tag - Juan Gabriel Machuca</description>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 30 Nov 2022 22:04:08 -0300</lastBuildDate><atom:link href="http://localhost/tags/personal/" rel="self" type="application/rss+xml" /><item>
     <title>Introduction to MyBlog</title>
     <link>http://localhost/posts/first_post/</link>
     <pubDate>Wed, 30 Nov 2022 22:04:08 -0300</pubDate>

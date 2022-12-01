@@ -2,6 +2,11 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost/categories/</loc></url><url>
-            <loc>http://localhost/</loc></url><url>
-            <loc>http://localhost/tags/</loc></url></urlset>
+            <loc>http://localhost/about/</loc><lastmod>2022-12-01T09:53:12-03:00</lastmod></url><url>
+            <loc>http://localhost/categories/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
+            <loc>http://localhost/posts/first_post/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
+            <loc>http://localhost/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
+            <loc>http://localhost/tags/personal/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
+            <loc>http://localhost/categories/personal/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
+            <loc>http://localhost/posts/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
+            <loc>http://localhost/tags/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url></urlset>

@@ -3,5 +3,13 @@
         <title>Tags - Tag - Juan Gabriel Machuca</title>
         <link>http://localhost/tags/</link>
         <description>Tags - Tag - Juan Gabriel Machuca</description>
-        <generator>Hugo -- gohugo.io</generator><atom:link href="http://localhost/tags/" rel="self" type="application/rss+xml" /></channel>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 30 Nov 2022 22:04:08 -0300</lastBuildDate><atom:link href="http://localhost/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Personal</title>
+    <link>http://localhost/tags/personal/</link>
+    <pubDate>Wed, 30 Nov 2022 22:04:08 -0300</pubDate>
+    <author>Author</author>
+    <guid>http://localhost/tags/personal/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>
