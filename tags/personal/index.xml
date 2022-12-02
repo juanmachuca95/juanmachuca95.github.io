@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Personal - Tag - Juan Gabriel Machuca</title>
-        <link>http://localhost/tags/personal/</link>
+        <link>https://juanmachuca95.github.io/tags/personal/</link>
         <description>Personal - Tag - Juan Gabriel Machuca</description>
-        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 30 Nov 2022 22:04:08 -0300</lastBuildDate><atom:link href="http://localhost/tags/personal/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 30 Nov 2022 22:04:08 -0300</lastBuildDate><atom:link href="https://juanmachuca95.github.io/tags/personal/" rel="self" type="application/rss+xml" /><item>
     <title>Introduction to MyBlog</title>
-    <link>http://localhost/posts/intoduction_to_my_blog/</link>
+    <link>https://juanmachuca95.github.io/posts/intoduction_to_my_blog/</link>
     <pubDate>Wed, 30 Nov 2022 22:04:08 -0300</pubDate>
     <author>Juan Gabriel Machuca</author>
-    <guid>http://localhost/posts/intoduction_to_my_blog/</guid>
+    <guid>https://juanmachuca95.github.io/posts/intoduction_to_my_blog/</guid>
     <description><![CDATA[¡Hi everyone! This is my first posts, I have to say that my english is not very good and it is one the reasons why I started to write my blog.]]></description>
 </item>
 </channel>

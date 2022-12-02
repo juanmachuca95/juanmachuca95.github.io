@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - Tag - Juan Gabriel Machuca</title>
-        <link>http://localhost/tags/</link>
+        <link>https://juanmachuca95.github.io/tags/</link>
         <description>Tags - Tag - Juan Gabriel Machuca</description>
-        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 30 Nov 2022 22:04:08 -0300</lastBuildDate><atom:link href="http://localhost/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 30 Nov 2022 22:04:08 -0300</lastBuildDate><atom:link href="https://juanmachuca95.github.io/tags/" rel="self" type="application/rss+xml" /><item>
     <title>Personal</title>
-    <link>http://localhost/tags/personal/</link>
+    <link>https://juanmachuca95.github.io/tags/personal/</link>
     <pubDate>Wed, 30 Nov 2022 22:04:08 -0300</pubDate>
     <author>Author</author>
-    <guid>http://localhost/tags/personal/</guid>
+    <guid>https://juanmachuca95.github.io/tags/personal/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

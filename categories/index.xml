@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - Category - Juan Gabriel Machuca</title>
-        <link>http://localhost/categories/</link>
+        <link>https://juanmachuca95.github.io/categories/</link>
         <description>Categories - Category - Juan Gabriel Machuca</description>
-        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 30 Nov 2022 22:04:08 -0300</lastBuildDate><atom:link href="http://localhost/categories/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 30 Nov 2022 22:04:08 -0300</lastBuildDate><atom:link href="https://juanmachuca95.github.io/categories/" rel="self" type="application/rss+xml" /><item>
     <title>Personal</title>
-    <link>http://localhost/categories/personal/</link>
+    <link>https://juanmachuca95.github.io/categories/personal/</link>
     <pubDate>Wed, 30 Nov 2022 22:04:08 -0300</pubDate>
     <author>Author</author>
-    <guid>http://localhost/categories/personal/</guid>
+    <guid>https://juanmachuca95.github.io/categories/personal/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

@@ -2,11 +2,11 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost/about/</loc><lastmod>2022-12-01T09:53:12-03:00</lastmod></url><url>
-            <loc>http://localhost/categories/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
-            <loc>http://localhost/posts/intoduction_to_my_blog/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
-            <loc>http://localhost/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
-            <loc>http://localhost/tags/personal/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
-            <loc>http://localhost/categories/personal/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
-            <loc>http://localhost/posts/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
-            <loc>http://localhost/tags/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url></urlset>
+            <loc>https://juanmachuca95.github.io/about/</loc><lastmod>2022-12-01T09:53:12-03:00</lastmod></url><url>
+            <loc>https://juanmachuca95.github.io/categories/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
+            <loc>https://juanmachuca95.github.io/posts/intoduction_to_my_blog/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
+            <loc>https://juanmachuca95.github.io/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
+            <loc>https://juanmachuca95.github.io/tags/personal/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
+            <loc>https://juanmachuca95.github.io/categories/personal/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
+            <loc>https://juanmachuca95.github.io/posts/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url><url>
+            <loc>https://juanmachuca95.github.io/tags/</loc><lastmod>2022-11-30T22:04:08-03:00</lastmod></url></urlset>
