@@ -32,7 +32,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/juanmachuca95.github.io\/posts\/how_to_deploy_theme_loveit_in_github_pages\/"
-        },"genre": "posts","keywords": "Hugo, GitHub Pages","wordcount":  691 ,
+        },"genre": "posts","keywords": "Hugo, GitHub Pages","wordcount":  726 ,
         "url": "https:\/\/juanmachuca95.github.io\/posts\/how_to_deploy_theme_loveit_in_github_pages\/","datePublished": "2022-12-03T19:46:43-03:00","dateModified": "2022-12-03T19:46:43-03:00","publisher": {
             "@type": "Organization",
             "name": "Juan Gabriel Machuca"},"author": {
@@ -76,7 +76,7 @@
         </div><article class="page single"><h1 class="single-title animated flipInX">How to deploy theme LoveIt in GitHub Pages</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Juan Gabriel Machuca</a>
 </span>&nbsp;<span class="post-category">included in <a href="/categories/hugo/"><i class="far fa-folder fa-fw"></i>hugo</a>&nbsp;<a href="/categories/github/"><i class="far fa-folder fa-fw"></i>GitHub</a>&nbsp;<a href="/categories/markdown/"><i class="far fa-folder fa-fw"></i>Markdown</a>&nbsp;<a href="/categories/bash/"><i class="far fa-folder fa-fw"></i>bash</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-12-03">2022-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;691 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-12-03">2022-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;726 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -140,7 +140,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">author</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;xxxx&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">email</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">link</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">link</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span> 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c"># Menu config</span>
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
@@ -181,6 +181,18 @@
 </span></span></code></pre></div><h2 id="3-script-to-deploy">3 Script to deploy</h2>
 <p>There may be more efficient ways to accomplish this task than deploying the project to GitHub. But this implementation is very convenient and practical for a personal blog.</p>
 <h2 id="31-create-repository-in-github">3.1 Create repository in GitHub</h2>
+<p>In this case I use the name &ldquo;demo_hugo&rdquo;, but you have two alternatives to rename the repository</p>
+<ul>
+<li>Two ways:
+<ul>
+<li>&lt; username &gt;.github.io</li>
+<li>demo_hugo</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>🖊️ <strong>Nota:</strong> In the last way, you need to create branch <strong>gh-pages</strong></p>
+</blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -262,10 +274,12 @@
 </span></span><span class="line"><span class="cl">./deploy.sh -m <span class="s2">&#34;deploy hugo theme LoveIt in GitHub Pages&#34;</span>
 </span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
 <p>As a conclusion this is a very simple and easy way to create your own blog and put it online. Just tweak it and play!</p>
-<p>Demo <strong><a href="https://juanmachuca95.github.io/demo_hugo" target="_blank" rel="noopener noreffer">demo_hugo</a>
-</strong>
-Repository <strong><a href="https://github.com/juanmachuca95/demo_hugo" target="_blank" rel="noopener noreffer">demo_hugo</a>
-</strong></p>
+<ul>
+<li>Demo <strong><a href="https://juanmachuca95.github.io/demo_hugo" target="_blank" rel="noopener noreffer">demo_hugo</a>
+</strong></li>
+<li>Repository <strong><a href="https://github.com/juanmachuca95/demo_hugo" target="_blank" rel="noopener noreffer">demo_hugo</a>
+</strong></li>
+</ul>
 <p>Congratulations on getting to this part of my article and being able to deploy your first blog like me.</p>
 <p>See you later 🖐️</p>
 </div><div class="post-footer" id="post-footer">
