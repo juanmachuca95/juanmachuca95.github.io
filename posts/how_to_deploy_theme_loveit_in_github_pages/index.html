@@ -32,7 +32,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/juanmachuca95.github.io\/posts\/how_to_deploy_theme_loveit_in_github_pages\/"
-        },"genre": "posts","keywords": "Hugo, GitHub Pages","wordcount":  740 ,
+        },"genre": "posts","keywords": "Hugo, GitHub Pages","wordcount":  1295 ,
         "url": "https:\/\/juanmachuca95.github.io\/posts\/how_to_deploy_theme_loveit_in_github_pages\/","datePublished": "2022-12-03T19:46:43-03:00","dateModified": "2022-12-03T19:46:43-03:00","publisher": {
             "@type": "Organization",
             "name": "Juan Gabriel Machuca"},"author": {
@@ -76,8 +76,8 @@
         </div><article class="page single"><h1 class="single-title animated flipInX">How to deploy theme LoveIt in GitHub Pages</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Juan Gabriel Machuca</a>
 </span>&nbsp;<span class="post-category">included in <a href="/categories/hugo/"><i class="far fa-folder fa-fw"></i>hugo</a>&nbsp;<a href="/categories/github/"><i class="far fa-folder fa-fw"></i>GitHub</a>&nbsp;<a href="/categories/markdown/"><i class="far fa-folder fa-fw"></i>Markdown</a>&nbsp;<a href="/categories/bash/"><i class="far fa-folder fa-fw"></i>bash</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-12-03">2022-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;740 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-12-03">2022-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1295 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -89,6 +89,16 @@
     <li><a href="#2-setup">2 Setup</a></li>
     <li><a href="#3-script-to-deploy">3 Script to deploy</a></li>
     <li><a href="#31-create-repository-in-github">3.1 Create repository in GitHub</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#32-option-1-usernamegithubio">3.2 Option 1 <code>&lt;username&gt;.github.io</code></a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#33-repositorys-name-demo_hugo">3.3 Repository&rsquo;s name <code>demo_hugo</code></a>
       <ul>
         <li></li>
       </ul>
@@ -142,40 +152,73 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c"># Author config</span>
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">author</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;xxxx&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Juan Gabriel Machuca&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">email</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">link</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span> 
+</span></span><span class="line"><span class="cl">  <span class="nx">link</span> <span class="p">=</span> <span class="s2">&#34;https://github.com/juanmachuca95&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Header config</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">header</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># desktop header mode (&#34;fixed&#34;, &#34;normal&#34;, &#34;auto&#34;)</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">desktopMode</span> <span class="p">=</span> <span class="s2">&#34;fixed&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># mobile header mode (&#34;fixed&#34;, &#34;normal&#34;, &#34;auto&#34;)</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">mobileMode</span> <span class="p">=</span> <span class="s2">&#34;auto&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># LoveIt NEW | 0.2.0 Header title config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">header</span><span class="p">.</span><span class="nx">title</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># URL of the LOGO</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">logo</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># title name</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Demo Hugo&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># you can add extra information before the name (HTML format is supported), such as icons</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&lt;i class=&#39;fa fa-book&#39;&gt;&lt;/i&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># you can add extra information after the name (HTML format is supported), such as icons</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># LoveIt NEW | 0.2.5 whether to use typeit animation for title name</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">typeit</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Home page config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">home</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># LoveIt NEW | 0.2.0 amount of RSS pages</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">rss</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># Home page profile</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">home</span><span class="p">.</span><span class="nx">profile</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># Gravatar Email for preferred avatar in home page</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">gravatarEmail</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># URL of avatar shown in home page</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># avatarURL = &#34;/images/avatar.png&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># LoveIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;First Blog&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># subtitle shown in home page (HTML format is supported)</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">subtitle</span> <span class="p">=</span> <span class="s2">&#34;This is My New Hugo Site&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># whether to use typeit animation for subtitle</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">typeit</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># whether to show social links</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">social</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># LoveIt NEW | 0.2.0 disclaimer (HTML format is supported)</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">disclaimer</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c"># Home page posts</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">home</span><span class="p">.</span><span class="nx">posts</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># special amount of posts in each home posts page</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">paginate</span> <span class="p">=</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># LoveIt DELETED | 0.2.0 replaced with hiddenFromHomePage in params.page</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># default behavior when you don&#39;t set &#34;hiddenFromHomePage&#34; in front matter</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">defaultHiddenFromHomePage</span> <span class="p">=</span> <span class="kc">false</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c"># Menu config</span>
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;posts&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="c"># you can add extra information before the name (HTML format is supported), such as icons</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="c"># you can add extra information after the name (HTML format is supported), such as icons</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Posts&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/posts/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Visit my blog?&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;https://juanmachuca95.github.io/posts&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="c"># title will be shown when you hover on this menu link</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">2</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Tags&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/tags/&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;categories&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Categories&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/categories/&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c"># Markup related configuration in Hugo</span>
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">markup</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">  <span class="c"># Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)</span>
@@ -185,16 +228,13 @@
 </span></span></code></pre></div><h2 id="3-script-to-deploy">3 Script to deploy</h2>
 <p>There may be more efficient ways to accomplish this task than deploying the project to GitHub. But this implementation is very convenient and practical for a personal blog.</p>
 <h2 id="31-create-repository-in-github">3.1 Create repository in GitHub</h2>
-<p>In this case I use the name &ldquo;demo_hugo&rdquo;, but you have two alternatives to rename the repository</p>
-<ul>
-<li>Two ways:
-<ul>
-<li><code>&lt; username &gt;.github.io</code></li>
-<li><code>demo_hugo</code></li>
-</ul>
-</li>
-</ul>
-<p><img
+<p>Depending on how we want to manage the repository in github we will have to execute one or another script.</p>
+<ol>
+<li>Option 1 <code>&lt;username&gt;.github.io</code></li>
+<li>Option 2 <code>demo_hugo</code></li>
+</ol>
+<p>In this case I use the name &ldquo;demo_hugo&rdquo;, but you have two alternatives to rename the repository
+<img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="create_repo.png"
@@ -205,16 +245,19 @@
 <blockquote>
 <h4 id="-__nota__-in-the-last-way-you-need-to-create-branch-gh-pages">🖊️ <strong>Nota:</strong> In the last way, you need to create branch <strong>gh-pages</strong></h4>
 </blockquote>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">pwd</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># output: /home/juan/hugo/demo_hugo</span>
-</span></span><span class="line"><span class="cl">nano deploy.sh
-</span></span></code></pre></div><h4 id="this-script-will-allow-you-to">This script will allow you to:</h4>
-<ol>
+<h2 id="32-option-1-usernamegithubio">3.2 Option 1 <code>&lt;username&gt;.github.io</code></h2>
+<p>This is the most simple way because you don&rsquo;t need to create branch <strong>gh-pages</strong></p>
+<h4 id="this-script-will-allow-you-to">This script will allow you to:</h4>
+<ul>
 <li><em>Set repository remote in GitHub</em></li>
 <li><em>Set message for the commit with the flag <code>-m &quot;&lt;message&gt;&quot;</code></em></li>
 <li><em>Generate public folder for the project</em></li>
 <li><em>push project on branch main</em></li>
-</ol>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">pwd</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># output: /home/juan/hugo/demo_hugo</span>
+</span></span><span class="line"><span class="cl">nano deploy.sh
+</span></span></code></pre></div><p>Content code to this option</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">function</span> helpPanel<span class="o">()</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">echo</span> -e <span class="s2">&#34;\nUsage: </span><span class="nv">$0</span><span class="s2"> [ -m MESSAGE ]&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
@@ -253,6 +296,79 @@
 </span></span><span class="line"><span class="cl">        <span class="nb">read</span> -p <span class="s2">&#34;Repository remote: &#34;</span> opt
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$opt</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">            git remote add origin <span class="s2">&#34;</span><span class="nv">$opt</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> 
+</span></span><span class="line"><span class="cl">            <span class="nb">echo</span> <span class="s2">&#34;Failed to set remote pository&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">exit</span> 1<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> 
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> 1<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\n👉 Deploy in GitHub Pages from this proyect . . .&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\nMessage commit: </span><span class="nv">$message</span><span class="s2">\n&#34;</span>
+</span></span><span class="line"><span class="cl">git add .  
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;</span><span class="nv">$message</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">git status
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git push origin main
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> .. 
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span> <span class="m">0</span>
+</span></span></code></pre></div><h2 id="33-repositorys-name-demo_hugo">3.3 Repository&rsquo;s name <code>demo_hugo</code></h2>
+<p>We will create the branch <code>gh-pages</code> from the same script to deploy</p>
+<h4 id="this-script-will-allow-you-to-1">This script will allow you to:</h4>
+<ul>
+<li><em>Set repository remote in GitHub</em></li>
+<li><em>Set message for the commit with the flag <code>-m &quot;&lt;message&gt;&quot;</code></em></li>
+<li><em>Generate public folder for the project</em></li>
+<li>*Create branch <code>gh-pages</code> for our project site</li>
+<li><em>push project on branch main</em></li>
+<li>*merge main on gh-pages</li>
+<li>*push project 👍</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">pwd</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># output: /home/juan/hugo/demo_hugo</span>
+</span></span><span class="line"><span class="cl">nano deploy.sh
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">function</span> helpPanel<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> -e <span class="s2">&#34;\nUsage: </span><span class="nv">$0</span><span class="s2"> [ -m MESSAGE ]&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> -e <span class="s2">&#34;\tExample: ./deploy.sh -m &#34;</span>Descriptive message <span class="k">for</span> commit<span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="nb">getopts</span> <span class="s2">&#34;m:h&#34;</span> args<span class="p">;</span> <span class="k">do</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nv">$args</span> in
+</span></span><span class="line"><span class="cl">        m<span class="o">)</span> <span class="nv">message</span><span class="o">=</span><span class="nv">$OPTARG</span><span class="p">;;</span>
+</span></span><span class="line"><span class="cl">        *<span class="o">)</span> helpPanel<span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">esac</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$message</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    helpPanel
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Run hugo to compile project </span>
+</span></span><span class="line"><span class="cl">hugo
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$?</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;0&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Failed to compile hugo site, please check possibles errors before to deploy&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> 1<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Move to public </span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> public
+</span></span><span class="line"><span class="cl"><span class="c1"># Check to folder .git is generated</span>
+</span></span><span class="line"><span class="cl"><span class="nb">test</span> -d .git 
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$?</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;1&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> 
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Failed because folder .git is not generated&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">read</span> -p <span class="s2">&#34;Do you want to run git init in public folder [ y/n ]&#34;</span> opt
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$opt</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;y&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        git init
+</span></span><span class="line"><span class="cl">        git branch -M main
+</span></span><span class="line"><span class="cl">        <span class="nb">read</span> -p <span class="s2">&#34;Repository remote: &#34;</span> opt
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$opt</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">            git remote add origin <span class="s2">&#34;</span><span class="nv">$opt</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># If you deploy project site then</span>
+</span></span><span class="line"><span class="cl">            git branch gh-pages
 </span></span><span class="line"><span class="cl">        <span class="k">else</span> 
 </span></span><span class="line"><span class="cl">            <span class="nb">echo</span> <span class="s2">&#34;Failed to set remote pository&#34;</span>
 </span></span><span class="line"><span class="cl">            <span class="nb">exit</span> 1<span class="p">;</span>
