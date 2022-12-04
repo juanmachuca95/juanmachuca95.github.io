@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>How to deploy theme LoveIt in GitHub Pages - Juan Gabriel Machuca</title><meta name="Description" content="My personal blog where I posted interesting things."><meta property="og:title" content="How to deploy theme LoveIt in GitHub Pages" />
-<meta property="og:description" content="Mi blog utiliza hugo con el tema LoveIt que uso para publicar este post y todo desplegado en GitHub Pages. Por lo tanto, en este post vamos a hablar de cómo podemos hacerlo.
+<meta property="og:description" content="My blog uses hugo with the LoveIt theme that I use to publish this post and all deployed on GitHub Pages. So, in this post we are going to talk about how we can do that.
 1 Requeriments: First of all, we need a couple of things before we start, here is my list.
  You have to install hugo 👉 Installation  Read documentation of the amazing LoveIt theme LoveIt  Read notes GitHubPages   2 Setup First of all we need to setup project in local, this firsts step you can see also in basic configuration # Create hugo site hugo new site demo_hugo # Move to directory cd demo_hugo git init # add theme LoveIt git submodule add https://github." />
 <meta property="og:type" content="article" />
@@ -17,7 +17,7 @@
 <meta name="twitter:image" content="https://juanmachuca95.github.io/logo.png"/>
 
 <meta name="twitter:title" content="How to deploy theme LoveIt in GitHub Pages"/>
-<meta name="twitter:description" content="Mi blog utiliza hugo con el tema LoveIt que uso para publicar este post y todo desplegado en GitHub Pages. Por lo tanto, en este post vamos a hablar de cómo podemos hacerlo.
+<meta name="twitter:description" content="My blog uses hugo with the LoveIt theme that I use to publish this post and all deployed on GitHub Pages. So, in this post we are going to talk about how we can do that.
 1 Requeriments: First of all, we need a couple of things before we start, here is my list.
  You have to install hugo 👉 Installation  Read documentation of the amazing LoveIt theme LoveIt  Read notes GitHubPages   2 Setup First of all we need to setup project in local, this firsts step you can see also in basic configuration # Create hugo site hugo new site demo_hugo # Move to directory cd demo_hugo git init # add theme LoveIt git submodule add https://github."/>
 <meta name="application-name" content="Juan Gabriel Machuca">
@@ -32,7 +32,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/juanmachuca95.github.io\/posts\/how_to_deploy_theme_loveit_in_github_pages\/"
-        },"genre": "posts","keywords": "Hugo, GitHub Pages","wordcount":  726 ,
+        },"genre": "posts","keywords": "Hugo, GitHub Pages","wordcount":  740 ,
         "url": "https:\/\/juanmachuca95.github.io\/posts\/how_to_deploy_theme_loveit_in_github_pages\/","datePublished": "2022-12-03T19:46:43-03:00","dateModified": "2022-12-03T19:46:43-03:00","publisher": {
             "@type": "Organization",
             "name": "Juan Gabriel Machuca"},"author": {
@@ -76,7 +76,7 @@
         </div><article class="page single"><h1 class="single-title animated flipInX">How to deploy theme LoveIt in GitHub Pages</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Juan Gabriel Machuca</a>
 </span>&nbsp;<span class="post-category">included in <a href="/categories/hugo/"><i class="far fa-folder fa-fw"></i>hugo</a>&nbsp;<a href="/categories/github/"><i class="far fa-folder fa-fw"></i>GitHub</a>&nbsp;<a href="/categories/markdown/"><i class="far fa-folder fa-fw"></i>Markdown</a>&nbsp;<a href="/categories/bash/"><i class="far fa-folder fa-fw"></i>bash</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-12-03">2022-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;726 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-12-03">2022-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;740 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -93,11 +93,15 @@
         <li></li>
       </ul>
     </li>
-    <li><a href="#4-we-are-ready">4 We are ready</a></li>
+    <li><a href="#4-we-are-ready">4 We are ready</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>Mi blog utiliza hugo con el tema LoveIt que uso para publicar este post y todo desplegado en GitHub Pages. Por lo tanto, en este post vamos a hablar de cómo podemos hacerlo.</p>
+            </div><div class="content" id="content"><p>My blog uses hugo with the LoveIt theme that I use to publish this post and all deployed on GitHub Pages. So, in this post we are going to talk about how we can do that.</p>
 <h2 id="1-requeriments">1 Requeriments:</h2>
 <p>First of all, we need a couple of things before we start, here is my list.</p>
 <ul>
@@ -185,14 +189,11 @@
 <ul>
 <li>Two ways:
 <ul>
-<li>&lt; username &gt;.github.io</li>
-<li>demo_hugo</li>
+<li><code>&lt; username &gt;.github.io</code></li>
+<li><code>demo_hugo</code></li>
 </ul>
 </li>
 </ul>
-<blockquote>
-<p>🖊️ <strong>Nota:</strong> In the last way, you need to create branch <strong>gh-pages</strong></p>
-</blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -201,6 +202,9 @@
         data-sizes="auto"
         alt="create_repo.png"
         title="create_repo" /></p>
+<blockquote>
+<h4 id="-__nota__-in-the-last-way-you-need-to-create-branch-gh-pages">🖊️ <strong>Nota:</strong> In the last way, you need to create branch <strong>gh-pages</strong></h4>
+</blockquote>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">pwd</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># output: /home/juan/hugo/demo_hugo</span>
 </span></span><span class="line"><span class="cl">nano deploy.sh
@@ -272,7 +276,10 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">755</span> deploy.sh
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">./deploy.sh -m <span class="s2">&#34;deploy hugo theme LoveIt in GitHub Pages&#34;</span>
-</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
+</span></span></code></pre></div><blockquote>
+<h4 id="-__note__-only-push-it-content-from-public-into-remote-repository">🖊️ <strong>Note:</strong> only push it content from public into remote repository</h4>
+</blockquote>
+<h2 id="conclusion">Conclusion</h2>
 <p>As a conclusion this is a very simple and easy way to create your own blog and put it online. Just tweak it and play!</p>
 <ul>
 <li>Demo <strong><a href="https://juanmachuca95.github.io/demo_hugo" target="_blank" rel="noopener noreffer">demo_hugo</a>
