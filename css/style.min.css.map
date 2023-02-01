@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.min.css",
-	"sourceRoot": "/home/juan/Desarrollos/hugo/mi-sitio",
+	"sourceRoot": "/mnt/b2c35a6f-37f6-4f77-9991-a975b09489ce/Desarrollos/hugo/mi-sitio",
 	"sources": [
 		"themes/LoveIt/assets/css/style.scss",
 		"themes/LoveIt/assets/css/_variables.scss",
