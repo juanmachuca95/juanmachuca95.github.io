@@ -11,7 +11,7 @@
     <guid>https://juanmachuca95.github.io/posts/how_to_deploy_theme_loveit_in_github_pages/</guid>
     <description><![CDATA[My blog uses hugo with the LoveIt theme that I use to publish this post and all deployed on GitHub Pages. So, in this post we are going to talk about how we can do that.
 1 Requeriments: First of all, we need a couple of things before we start, here is my list.
- You have to install hugo 👉 Installation  Read documentation of the amazing LoveIt theme LoveIt  Read notes GitHubPages   2 Setup First of all we need to setup project in local, this firsts step you can see also in basic configuration # Create hugo site hugo new site demo_hugo # Move to directory cd demo_hugo git init # add theme LoveIt git submodule add https://github.]]></description>
+ You have to install hugo 👉 Installation Read documentation of the amazing LoveIt theme LoveIt Read notes GitHubPages  2 Setup First of all we need to setup project in local, this firsts step you can see also in basic configuration]]></description>
 </item>
 </channel>
 </rss>
