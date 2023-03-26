@@ -32,7 +32,7 @@ Today we are going to talk about i18n. I have to say that it is very interesting
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/juanmachuca95.github.io\/posts\/how_to_use_i18n_in_golang\/"
-        },"genre": "posts","wordcount":  1095 ,
+        },"genre": "posts","wordcount":  1097 ,
         "url": "https:\/\/juanmachuca95.github.io\/posts\/how_to_use_i18n_in_golang\/","datePublished": "2023-03-26T11:26:08-03:00","dateModified": "2023-03-26T11:26:08-03:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -74,7 +74,7 @@ Today we are going to talk about i18n. I have to say that it is very interesting
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">How to use i18n in golang?</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Juan Machuca</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-26">2023-03-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1095 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-26">2023-03-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1097 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -86,6 +86,7 @@ Today we are going to talk about i18n. I have to say that it is very interesting
     <li><a href="#how-to-use-i18n-in-golang">How to use i18n in golang?</a></li>
     <li><a href="#learn-with-a-example">Learn with a example</a></li>
     <li><a href="#how-to-run">How to run?</a></li>
+    <li><a href="#demo">Demo</a></li>
     <li><a href="#advantages">Advantages</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ul>
@@ -260,7 +261,7 @@ Today we are going to talk about i18n. I have to say that it is very interesting
 	<span class="nx">r</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
 
 	<span class="c1">// Accept-Language (en or es) required
-</span><span class="c1"></span>	<span class="nx">r</span><span class="p">.</span><span class="nf">Use</span><span class="p">(</span><span class="nx">gotvl</span><span class="p">.</span><span class="nx">SetInstancesTranslate</span><span class="p">)</span>
+</span><span class="c1"></span>	<span class="nx">r</span><span class="p">.</span><span class="nf">Use</span><span class="p">(</span><span class="nx">pkg</span><span class="p">.</span><span class="nx">SetInstancesTranslate</span><span class="p">)</span>
 	<span class="nx">r</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;user&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">ctx</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
 		<span class="nx">tvl</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">gotvl</span><span class="p">.</span><span class="nf">GetTVLContext</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span>
 		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
@@ -347,6 +348,8 @@ Today we are going to talk about i18n. I have to say that it is very interesting
 <p>Ready! We have the translation files, now let go do the magic.</p>
 </li>
 </ol>
+<h2 id="demo">Demo</h2>
+<p><a href="https://juanmachuca95.github.io/demo.webm" target="_blank" rel="noopener noreffer ">https://juanmachuca95.github.io/demo.webm</a></p>
 <h2 id="advantages">Advantages</h2>
 <p>Here are the advantages of using i18n (internationalization) in Go:</p>
 <ol>
