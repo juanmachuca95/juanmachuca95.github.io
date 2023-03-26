@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>How to use i18n in golang? - Juan Gabriel Machuca</title><meta name="Description" content="My personal blog where I posted interesting things."><meta property="og:title" content="How to use i18n in golang?" />
-<meta property="og:description" content="Internationalization (i18n) is essential for creating applications that can be used in different languages and regions around the world. In Golang, i18n refers to the process of creating applications that can adapt to different languages, cultures, and regions so that users can effectively interact with them regardless of their location or native language.
-To achieve this, Golang provides a standard package called &ldquo;i18n&rdquo; that allows developers to internationalize their applications effectively." />
+<meta property="og:description" content="Hi, it&rsquo;s me again. I may not keep my promise to do a post every month, but in my defense I had to move to another place, which made it harder to pay attention to the blog. Anyway, I&rsquo;m back, to continue.
+Today we are going to talk about i18n. I have to say that it is very interesting for me, because I didn&rsquo;t know much about it. So . ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://juanmachuca95.github.io/posts/how_to_use_i18n_in_golang/" /><meta property="og:image" content="https://juanmachuca95.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-03-26T11:26:08-03:00" />
@@ -16,8 +16,8 @@ To achieve this, Golang provides a standard package called &ldquo;i18n&rdquo; th
 <meta name="twitter:image" content="https://juanmachuca95.github.io/logo.png"/>
 
 <meta name="twitter:title" content="How to use i18n in golang?"/>
-<meta name="twitter:description" content="Internationalization (i18n) is essential for creating applications that can be used in different languages and regions around the world. In Golang, i18n refers to the process of creating applications that can adapt to different languages, cultures, and regions so that users can effectively interact with them regardless of their location or native language.
-To achieve this, Golang provides a standard package called &ldquo;i18n&rdquo; that allows developers to internationalize their applications effectively."/>
+<meta name="twitter:description" content="Hi, it&rsquo;s me again. I may not keep my promise to do a post every month, but in my defense I had to move to another place, which made it harder to pay attention to the blog. Anyway, I&rsquo;m back, to continue.
+Today we are going to talk about i18n. I have to say that it is very interesting for me, because I didn&rsquo;t know much about it. So . ."/>
 <meta name="application-name" content="My cool site">
 <meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -32,7 +32,7 @@ To achieve this, Golang provides a standard package called &ldquo;i18n&rdquo; th
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/juanmachuca95.github.io\/posts\/how_to_use_i18n_in_golang\/"
-        },"genre": "posts","wordcount":  116 ,
+        },"genre": "posts","wordcount":  966 ,
         "url": "https:\/\/juanmachuca95.github.io\/posts\/how_to_use_i18n_in_golang\/","datePublished": "2023-03-26T11:26:08-03:00","dateModified": "2023-03-26T11:26:08-03:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -74,16 +74,265 @@ To achieve this, Golang provides a standard package called &ldquo;i18n&rdquo; th
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">How to use i18n in golang?</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Juan Machuca</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-26">2023-03-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;116 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-26">2023-03-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;966 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>Internationalization (i18n) is essential for creating applications that can be used in different languages and regions around the world. In Golang, i18n refers to the process of creating applications that can adapt to different languages, cultures, and regions so that users can effectively interact with them regardless of their location or native language.</p>
-<p>To achieve this, Golang provides a standard package called &ldquo;i18n&rdquo; that allows developers to internationalize their applications effectively. With the i18n package, developers can translate their application into different languages, format numbers, currencies, and dates according to regional preferences, and handle different text formats for different languages. Additionally, Golang also provides a tool called &ldquo;go-i18n&rdquo; to help developers efficiently manage their translation files.</p>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-use-i18n-in-golang">How to use i18n in golang?</a></li>
+    <li><a href="#learn-with-a-example">Learn with a example</a>
+      <ul>
+        <li><a href="#this-structure-wraps-the-validations-the-translator-for-the-specified-region-and-the-i18n-locator-to-return-the-correct-message">This structure wraps the validations, the translator for the specified region and the i18n locator to return the correct message.</a></li>
+      </ul>
+    </li>
+    <li><a href="#advantages">Advantages</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Hi, it&rsquo;s me again. I may not keep my promise to do a post every month, but in my defense I had to move to another place, which made it harder to pay attention to the blog. Anyway, I&rsquo;m back, to continue.</p>
+<p>Today we are going to talk about i18n. I have to say that it is very interesting for me, because I didn&rsquo;t know much about it. So . . .</p>
+<h2 id="how-to-use-i18n-in-golang">How to use i18n in golang?</h2>
+<p>First of all, we must know what &ldquo;i18n&rdquo; means, which stands for &ldquo;internationalization&rdquo;. This allows us to create applications (api, websites, or web services) to be consumed by different clients with different languages. This makes them much more user friendly.</p>
+<h2 id="learn-with-a-example">Learn with a example</h2>
+<p>Let&rsquo;s suppose that I have an api that works in English and in Spanish. But for both cases the behavior and the functions they offer are the same. Well, so far so good. The problem is that by convention the errors are in English but when my application responds to a client in Spanish, I have to translate it in the code.</p>
+<p>Obviusly, there are many diferents way to do that. But the must convenient is use i18n.</p>
+<ol>
+<li>Add the &ldquo;i18n&rdquo; library to your Golang project. You can do this using the go get command in your terminal:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="k">go</span> <span class="nx">get</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">nicksnyder</span><span class="o">/</span><span class="k">go</span><span class="o">-</span><span class="nx">i18n</span><span class="o">/</span><span class="nx">v2</span><span class="o">/</span><span class="nx">i18n</span>
+</code></pre></div><ol start="2">
+<li>For this case we will have an api in gin that uses a middleware with the Accept-Langue header, which will be checked to know the user&rsquo;s region.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// SetInstancesTranslate is our middleware
+</span><span class="c1"></span><span class="nx">r</span><span class="p">.</span><span class="nf">Use</span><span class="p">(</span><span class="nx">pkg</span><span class="p">.</span><span class="nx">SetInstancesTranslate</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">pkg</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;net/http&#34;</span>
+	<span class="s">&#34;strings&#34;</span>
+
+	<span class="s">&#34;github.com/gin-gonic/gin&#34;</span>
+	<span class="s">&#34;github.com/go-playground/locales/en&#34;</span>
+	<span class="s">&#34;github.com/go-playground/locales/es&#34;</span>
+	<span class="nx">ut</span> <span class="s">&#34;github.com/go-playground/universal-translator&#34;</span>
+	<span class="s">&#34;github.com/go-playground/validator/v10&#34;</span>
+	<span class="nx">en_translations</span> <span class="s">&#34;github.com/go-playground/validator/v10/translations/en&#34;</span>
+	<span class="nx">es_translations</span> <span class="s">&#34;github.com/go-playground/validator/v10/translations/es&#34;</span>
+	<span class="s">&#34;github.com/nicksnyder/go-i18n/v2/i18n&#34;</span>
+	<span class="s">&#34;github.com/pelletier/go-toml/v2&#34;</span>
+	<span class="s">&#34;golang.org/x/text/language&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">type</span> <span class="nx">Lang</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">Tag</span>  <span class="nx">language</span><span class="p">.</span><span class="nx">Tag</span>
+	<span class="nx">Lang</span> <span class="kt">string</span>
+	<span class="nx">Path</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="c1">// Note: you need folder translations into your project
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">NewLang</span><span class="p">(</span><span class="nx">tag</span> <span class="nx">language</span><span class="p">.</span><span class="nx">Tag</span><span class="p">)</span> <span class="nx">Lang</span> <span class="p">{</span>
+	<span class="nx">path</span> <span class="o">:=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;translations/active.%s.toml&#34;</span><span class="p">,</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="nx">tag</span><span class="p">.</span><span class="nf">String</span><span class="p">(),</span> <span class="s">&#34;-&#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+	<span class="k">return</span> <span class="nx">Lang</span><span class="p">{</span>
+		<span class="nx">Tag</span><span class="p">:</span>  <span class="nx">tag</span><span class="p">,</span>
+		<span class="nx">Lang</span><span class="p">:</span> <span class="nx">tag</span><span class="p">.</span><span class="nf">String</span><span class="p">(),</span>
+		<span class="nx">Path</span><span class="p">:</span> <span class="nx">path</span><span class="p">,</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="p">(</span>
+	<span class="nx">EN</span> <span class="p">=</span> <span class="s">&#34;en&#34;</span>
+	<span class="nx">ES</span> <span class="p">=</span> <span class="s">&#34;es&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">var</span> <span class="p">(</span>
+	<span class="nx">UniversalTranslator</span> <span class="o">*</span><span class="nx">ut</span><span class="p">.</span><span class="nx">UniversalTranslator</span>
+<span class="p">)</span>
+
+<span class="c1">// NewLanguageTranslator returns a new translator for validation messages based on the selected language.
+</span><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">l</span> <span class="nx">Lang</span><span class="p">)</span> <span class="nf">NewLanguageTranslator</span><span class="p">()</span> <span class="p">(</span><span class="nx">ut</span><span class="p">.</span><span class="nx">Translator</span><span class="p">,</span> <span class="o">*</span><span class="nx">validator</span><span class="p">.</span><span class="nx">Validate</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">// Note: the first parameter is the alternative when the translator is not found
+</span><span class="c1"></span>    <span class="c1">// but it is still necessary to set it afterwards.
+</span><span class="c1"></span>	<span class="nx">UniversalTranslator</span> <span class="p">=</span> <span class="nx">ut</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="nx">en</span><span class="p">.</span><span class="nf">New</span><span class="p">(),</span> <span class="nx">en</span><span class="p">.</span><span class="nf">New</span><span class="p">(),</span> <span class="nx">es</span><span class="p">.</span><span class="nf">New</span><span class="p">())</span>
+	<span class="nx">v</span> <span class="o">:=</span> <span class="nx">validator</span><span class="p">.</span><span class="nf">New</span><span class="p">()</span>
+
+	<span class="k">switch</span> <span class="nx">l</span><span class="p">.</span><span class="nx">Lang</span> <span class="p">{</span>
+	<span class="k">case</span> <span class="nx">EN</span><span class="p">:</span>
+		<span class="nx">t</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">UniversalTranslator</span><span class="p">.</span><span class="nf">GetTranslator</span><span class="p">(</span><span class="nx">EN</span><span class="p">)</span> <span class="c1">// en
+</span><span class="c1"></span>		<span class="k">if</span> <span class="p">!</span><span class="nx">ok</span> <span class="p">{</span>
+			<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">v</span><span class="p">,</span> <span class="nx">ErrTranslatorNotFound</span>
+		<span class="p">}</span>
+		<span class="nx">en_translations</span><span class="p">.</span><span class="nf">RegisterDefaultTranslations</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nx">t</span><span class="p">,</span> <span class="nx">v</span><span class="p">,</span> <span class="kc">nil</span>
+	<span class="k">case</span> <span class="nx">ES</span><span class="p">:</span>
+		<span class="nx">t</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">UniversalTranslator</span><span class="p">.</span><span class="nf">GetTranslator</span><span class="p">(</span><span class="nx">ES</span><span class="p">)</span> <span class="c1">// es
+</span><span class="c1"></span>		<span class="k">if</span> <span class="p">!</span><span class="nx">ok</span> <span class="p">{</span>
+			<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">v</span><span class="p">,</span> <span class="nx">ErrTranslatorNotFound</span>
+		<span class="p">}</span>
+		<span class="nx">es_translations</span><span class="p">.</span><span class="nf">RegisterDefaultTranslations</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nx">t</span><span class="p">,</span> <span class="nx">v</span><span class="p">,</span> <span class="kc">nil</span>
+	<span class="k">default</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">v</span><span class="p">,</span> <span class="nx">ErrLanguageNotSupported</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// NewCustomTranslatorI18n returns a new localizer that uses a custom i18n message file.
+</span><span class="c1">// This can be a .toml or .json file. For this example, we&#39;ll use toml.
+</span><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">l</span> <span class="nx">Lang</span><span class="p">)</span> <span class="nf">NewCustomTranslatorI18n</span><span class="p">()</span> <span class="p">(</span><span class="o">*</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">Localizer</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">bundle</span> <span class="o">:=</span> <span class="nx">i18n</span><span class="p">.</span><span class="nf">NewBundle</span><span class="p">(</span><span class="nx">l</span><span class="p">.</span><span class="nx">Tag</span><span class="p">)</span>
+	<span class="nx">bundle</span><span class="p">.</span><span class="nf">RegisterUnmarshalFunc</span><span class="p">(</span><span class="s">&#34;toml&#34;</span><span class="p">,</span> <span class="nx">toml</span><span class="p">.</span><span class="nx">Unmarshal</span><span class="p">)</span>
+	<span class="c1">// Here, we could load all the .toml files, but it seems better to only load the required one.
+</span><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">bundle</span><span class="p">.</span><span class="nf">LoadMessageFile</span><span class="p">(</span><span class="nx">l</span><span class="p">.</span><span class="nx">Path</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="nx">i18n</span><span class="p">.</span><span class="nf">NewLocalizer</span><span class="p">(</span><span class="nx">bundle</span><span class="p">,</span> <span class="nx">l</span><span class="p">.</span><span class="nx">Lang</span><span class="p">),</span> <span class="kc">nil</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">SetInstancesTranslate</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">acceptLanguage</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">GetHeader</span><span class="p">(</span><span class="s">&#34;Accept-Language&#34;</span><span class="p">)</span>
+	<span class="nx">lang</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">language</span><span class="p">.</span><span class="nf">Parse</span><span class="p">(</span><span class="nx">acceptLanguage</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">c</span><span class="p">.</span><span class="nf">JSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusInternalServerError</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+	<span class="nx">newLang</span> <span class="o">:=</span> <span class="nf">NewLang</span><span class="p">(</span><span class="nx">lang</span><span class="p">)</span>
+	<span class="nx">l</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">newLang</span><span class="p">.</span><span class="nf">NewCustomTranslatorI18n</span><span class="p">()</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">c</span><span class="p">.</span><span class="nf">AbortWithStatusJSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusInternalServerError</span><span class="p">,</span> <span class="nx">gin</span><span class="p">.</span><span class="nx">H</span><span class="p">{</span><span class="s">&#34;error&#34;</span><span class="p">:</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">()})</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+	<span class="nx">t</span><span class="p">,</span> <span class="nx">v</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">newLang</span><span class="p">.</span><span class="nf">NewLanguageTranslator</span><span class="p">()</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">c</span><span class="p">.</span><span class="nf">AbortWithStatusJSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusInternalServerError</span><span class="p">,</span> <span class="nx">gin</span><span class="p">.</span><span class="nx">H</span><span class="p">{</span><span class="s">&#34;error&#34;</span><span class="p">:</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">()})</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+	<span class="nx">tvl</span> <span class="o">:=</span> <span class="nf">NewTVLContext</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">v</span><span class="p">,</span> <span class="nx">l</span><span class="p">)</span>
+	<span class="nx">c</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;tvl&#34;</span><span class="p">,</span> <span class="nx">tvl</span><span class="p">)</span>
+	<span class="nx">c</span><span class="p">.</span><span class="nf">Next</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="this-structure-wraps-the-validations-the-translator-for-the-specified-region-and-the-i18n-locator-to-return-the-correct-message">This structure wraps the validations, the translator for the specified region and the i18n locator to return the correct message.</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">pkg</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;github.com/gin-gonic/gin&#34;</span>
+	<span class="nx">ut</span> <span class="s">&#34;github.com/go-playground/universal-translator&#34;</span>
+	<span class="s">&#34;github.com/go-playground/validator/v10&#34;</span>
+	<span class="s">&#34;github.com/nicksnyder/go-i18n/v2/i18n&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">type</span> <span class="nx">TVLContext</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">T</span> <span class="nx">ut</span><span class="p">.</span><span class="nx">Translator</span>
+	<span class="nx">V</span> <span class="o">*</span><span class="nx">validator</span><span class="p">.</span><span class="nx">Validate</span>
+	<span class="nx">L</span> <span class="o">*</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">Localizer</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">NewTVLContext</span><span class="p">(</span>
+	<span class="nx">t</span> <span class="nx">ut</span><span class="p">.</span><span class="nx">Translator</span><span class="p">,</span>
+	<span class="nx">v</span> <span class="o">*</span><span class="nx">validator</span><span class="p">.</span><span class="nx">Validate</span><span class="p">,</span>
+	<span class="nx">l</span> <span class="o">*</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">Localizer</span><span class="p">,</span>
+<span class="p">)</span> <span class="nx">TVLContext</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">TVLContext</span><span class="p">{</span><span class="nx">T</span><span class="p">:</span> <span class="nx">t</span><span class="p">,</span> <span class="nx">V</span><span class="p">:</span> <span class="nx">v</span><span class="p">,</span> <span class="nx">L</span><span class="p">:</span> <span class="nx">l</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">GetTVLContext</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">(</span><span class="nx">TVLContext</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">tvl</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">MustGet</span><span class="p">(</span><span class="s">&#34;tvl&#34;</span><span class="p">).(</span><span class="nx">TVLContext</span><span class="p">)</span>
+	<span class="k">if</span> <span class="p">!</span><span class="nx">ok</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">TVLContext</span><span class="p">{},</span> <span class="nx">ErrInvalidTVL</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="nx">tvl</span><span class="p">,</span> <span class="kc">nil</span>
+<span class="p">}</span>
+</code></pre></div><p>All these files can be improved and even create a package so that this logic is abstracted.</p>
+<p>Finally, we would have a handler for our tests.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">UserRequest</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">Name</span>     <span class="kt">string</span> <span class="s">`json:&#34;name&#34; validate:&#34;required,alpha&#34;`</span>
+	<span class="nx">Email</span>    <span class="kt">string</span> <span class="s">`json:&#34;email&#34; validate:&#34;required,email&#34;`</span>
+	<span class="nx">Password</span> <span class="kt">string</span> <span class="s">`json:&#34;password&#34; validate:&#34;required,lte=8&#34;`</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">r</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
+
+	<span class="c1">// Accept-Language (en or es) required
+</span><span class="c1"></span>	<span class="nx">r</span><span class="p">.</span><span class="nf">Use</span><span class="p">(</span><span class="nx">gotvl</span><span class="p">.</span><span class="nx">SetInstancesTranslate</span><span class="p">)</span>
+	<span class="nx">r</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;user&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">ctx</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">tvl</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">gotvl</span><span class="p">.</span><span class="nf">GetTVLContext</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+			<span class="nx">ctx</span><span class="p">.</span><span class="nf">JSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusInternalServerError</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+			<span class="k">return</span>
+		<span class="p">}</span>
+
+		<span class="kd">var</span> <span class="nx">u</span> <span class="nx">UserRequest</span>
+		<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nf">ShouldBindJSON</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">u</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+			<span class="nx">ctx</span><span class="p">.</span><span class="nf">JSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusUnprocessableEntity</span><span class="p">,</span> <span class="nx">tvl</span><span class="p">.</span><span class="nx">L</span><span class="p">.</span><span class="nf">MustLocalize</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">LocalizeConfig</span><span class="p">{</span><span class="nx">MessageID</span><span class="p">:</span> <span class="s">&#34;Request malformed&#34;</span><span class="p">}))</span>
+			<span class="k">return</span>
+		<span class="p">}</span>
+
+		<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">tvl</span><span class="p">.</span><span class="nx">V</span><span class="p">.</span><span class="nf">Struct</span><span class="p">(</span><span class="nx">u</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="nx">err</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">err</span><span class="p">.(</span><span class="nx">validator</span><span class="p">.</span><span class="nx">ValidationErrors</span><span class="p">);</span> <span class="nx">ok</span> <span class="p">{</span>
+				<span class="nx">ctx</span><span class="p">.</span><span class="nf">JSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusBadRequest</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Translate</span><span class="p">(</span><span class="nx">tvl</span><span class="p">.</span><span class="nx">T</span><span class="p">))</span>
+				<span class="k">return</span>
+			<span class="p">}</span>
+
+			<span class="nx">ctx</span><span class="p">.</span><span class="nf">JSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusUnprocessableEntity</span><span class="p">,</span> <span class="nx">tvl</span><span class="p">.</span><span class="nx">L</span><span class="p">.</span><span class="nf">MustLocalize</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">LocalizeConfig</span><span class="p">{</span><span class="nx">MessageID</span><span class="p">:</span> <span class="s">&#34;Error unexpected&#34;</span><span class="p">}))</span>
+			<span class="k">return</span>
+		<span class="p">}</span>
+
+		<span class="nx">ctx</span><span class="p">.</span><span class="nf">JSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">,</span> <span class="nx">tvl</span><span class="p">.</span><span class="nx">L</span><span class="p">.</span><span class="nf">MustLocalize</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">LocalizeConfig</span><span class="p">{</span><span class="nx">MessageID</span><span class="p">:</span> <span class="s">&#34;OK&#34;</span><span class="p">,</span> <span class="nx">PluralCount</span><span class="p">:</span> <span class="mi">1</span><span class="p">}))</span> <span class="c1">// 🚀
+</span><span class="c1"></span>	<span class="p">})</span>
+
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">r</span><span class="p">.</span><span class="nf">Run</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span> 
+
+</code></pre></div><p>We have the go logic, but we need to have the translation files somewhere. For this we will use the <code>translations</code> folder.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile"><span class="c"># Generate translations (en, es)
+</span><span class="c"># Create by definitions
+</span><span class="c"></span><span class="nf">.PHONY</span><span class="o">:</span> <span class="n">init</span>
+<span class="nf">init</span><span class="o">:</span>
+	mkdir translations <span class="o">&amp;&amp;</span> <span class="nb">cd</span> translations<span class="p">;</span> touch active.en.toml active.es.toml
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">gen</span>
+<span class="nf">gen</span><span class="o">:</span>
+	<span class="nb">cd</span> translations <span class="o">&amp;&amp;</span> goi18n merge active.en.toml active.es.toml 
+
+<span class="c"># Use the Finish command only when all translations have been completed.
+</span><span class="c"></span><span class="nf">.PHONY</span><span class="o">:</span> <span class="n">finish</span>
+<span class="nf">finish</span><span class="o">:</span>
+	<span class="nb">cd</span> translations<span class="p">;</span> <span class="nb">echo</span> <span class="s2">&#34;\n&#34;</span> &gt;&gt; active.es.toml<span class="p">;</span> cat translate.es.toml &gt;&gt; active.es.toml<span class="p">;</span>
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">reset</span>
+<span class="nf">reset</span><span class="o">:</span> 
+	<span class="nb">cd</span> translations<span class="p">;</span> rm -rf active.es.toml translate.es.toml<span class="p">;</span> touch active.en.toml
+</code></pre></div><h2 id="advantages">Advantages</h2>
+<p>Here are the advantages of using i18n (internationalization) in Go:</p>
+<ol>
+<li>
+<p>Improved user experience by allowing localization for users in different regions.</p>
+</li>
+<li>
+<p>Better code organization by separating language-specific content from application code.</p>
+</li>
+<li>
+<p>Increased flexibility by supporting additional languages without modifying underlying code.</p>
+</li>
+<li>
+<p>Increased reach by reaching a wider audience, including non-English speakers.</p>
+</li>
+<li>
+<p>Easier compliance with local language and cultural requirements.</p>
+</li>
+</ol>
+<p>In summary, i18n in Go allows for improved user experience, better code organization, increased flexibility and reach, and easier compliance with local language and cultural requirements.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

@@ -9,8 +9,8 @@
     <pubDate>Sun, 26 Mar 2023 11:26:08 -0300</pubDate>
     <author>Juan Machuca</author>
     <guid>https://juanmachuca95.github.io/posts/how_to_use_i18n_in_golang/</guid>
-    <description><![CDATA[Internationalization (i18n) is essential for creating applications that can be used in different languages and regions around the world. In Golang, i18n refers to the process of creating applications that can adapt to different languages, cultures, and regions so that users can effectively interact with them regardless of their location or native language.
-To achieve this, Golang provides a standard package called &ldquo;i18n&rdquo; that allows developers to internationalize their applications effectively.]]></description>
+    <description><![CDATA[Hi, it&rsquo;s me again. I may not keep my promise to do a post every month, but in my defense I had to move to another place, which made it harder to pay attention to the blog. Anyway, I&rsquo;m back, to continue.
+Today we are going to talk about i18n. I have to say that it is very interesting for me, because I didn&rsquo;t know much about it. So . .]]></description>
 </item>
 <item>
     <title>Let&#39;s talk about gorutines</title>
