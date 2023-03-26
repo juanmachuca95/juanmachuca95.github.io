@@ -3,9 +3,18 @@
         <title>Juan Gabriel Machuca</title>
         <link>https://juanmachuca95.github.io/</link>
         <description>My personal blog where I posted interesting things.</description>
-        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 31 Jan 2023 21:02:15 -0300</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Sun, 26 Mar 2023 11:26:08 -0300</lastBuildDate>
             <atom:link href="https://juanmachuca95.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>How to use i18n in golang?</title>
+    <link>https://juanmachuca95.github.io/posts/how_to_use_i18n_in_golang/</link>
+    <pubDate>Sun, 26 Mar 2023 11:26:08 -0300</pubDate>
+    <author>Juan Machuca</author>
+    <guid>https://juanmachuca95.github.io/posts/how_to_use_i18n_in_golang/</guid>
+    <description><![CDATA[Internationalization (i18n) is essential for creating applications that can be used in different languages and regions around the world. In Golang, i18n refers to the process of creating applications that can adapt to different languages, cultures, and regions so that users can effectively interact with them regardless of their location or native language.
+To achieve this, Golang provides a standard package called &ldquo;i18n&rdquo; that allows developers to internationalize their applications effectively.]]></description>
+</item>
+<item>
     <title>Let&#39;s talk about gorutines</title>
     <link>https://juanmachuca95.github.io/posts/lets_talk_about_gorutines/</link>
     <pubDate>Tue, 31 Jan 2023 21:02:15 -0300</pubDate>
