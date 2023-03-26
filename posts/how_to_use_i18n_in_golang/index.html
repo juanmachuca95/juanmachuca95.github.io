@@ -32,7 +32,7 @@ Today we are going to talk about i18n. I have to say that it is very interesting
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/juanmachuca95.github.io\/posts\/how_to_use_i18n_in_golang\/"
-        },"genre": "posts","wordcount":  966 ,
+        },"genre": "posts","wordcount":  1095 ,
         "url": "https:\/\/juanmachuca95.github.io\/posts\/how_to_use_i18n_in_golang\/","datePublished": "2023-03-26T11:26:08-03:00","dateModified": "2023-03-26T11:26:08-03:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -74,8 +74,8 @@ Today we are going to talk about i18n. I have to say that it is very interesting
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">How to use i18n in golang?</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Juan Machuca</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-26">2023-03-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;966 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-26">2023-03-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1095 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -84,12 +84,10 @@ Today we are going to talk about i18n. I have to say that it is very interesting
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#how-to-use-i18n-in-golang">How to use i18n in golang?</a></li>
-    <li><a href="#learn-with-a-example">Learn with a example</a>
-      <ul>
-        <li><a href="#this-structure-wraps-the-validations-the-translator-for-the-specified-region-and-the-i18n-locator-to-return-the-correct-message">This structure wraps the validations, the translator for the specified region and the i18n locator to return the correct message.</a></li>
-      </ul>
-    </li>
+    <li><a href="#learn-with-a-example">Learn with a example</a></li>
+    <li><a href="#how-to-run">How to run?</a></li>
     <li><a href="#advantages">Advantages</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>Hi, it&rsquo;s me again. I may not keep my promise to do a post every month, but in my defense I had to move to another place, which made it harder to pay attention to the blog. Anyway, I&rsquo;m back, to continue.</p>
@@ -218,7 +216,7 @@ Today we are going to talk about i18n. I have to say that it is very interesting
 	<span class="nx">c</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;tvl&#34;</span><span class="p">,</span> <span class="nx">tvl</span><span class="p">)</span>
 	<span class="nx">c</span><span class="p">.</span><span class="nf">Next</span><span class="p">()</span>
 <span class="p">}</span>
-</code></pre></div><h3 id="this-structure-wraps-the-validations-the-translator-for-the-specified-region-and-the-i18n-locator-to-return-the-correct-message">This structure wraps the validations, the translator for the specified region and the i18n locator to return the correct message.</h3>
+</code></pre></div><p>This structure wraps the validations, the translator for the specified region and the i18n locator to return the correct message.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">pkg</span>
 
 <span class="kn">import</span> <span class="p">(</span>
@@ -297,7 +295,8 @@ Today we are going to talk about i18n. I have to say that it is very interesting
 </code></pre></div><p>We have the go logic, but we need to have the translation files somewhere. For this we will use the <code>translations</code> folder.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile"><span class="c"># Generate translations (en, es)
 </span><span class="c"># Create by definitions
-</span><span class="c"></span><span class="nf">.PHONY</span><span class="o">:</span> <span class="n">init</span>
+</span><span class="c"></span>
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">init</span>
 <span class="nf">init</span><span class="o">:</span>
 	mkdir translations <span class="o">&amp;&amp;</span> <span class="nb">cd</span> translations<span class="p">;</span> touch active.en.toml active.es.toml
 
@@ -313,7 +312,42 @@ Today we are going to talk about i18n. I have to say that it is very interesting
 <span class="nf">.PHONY</span><span class="o">:</span> <span class="n">reset</span>
 <span class="nf">reset</span><span class="o">:</span> 
 	<span class="nb">cd</span> translations<span class="p">;</span> rm -rf active.es.toml translate.es.toml<span class="p">;</span> touch active.en.toml
-</code></pre></div><h2 id="advantages">Advantages</h2>
+</code></pre></div><h2 id="how-to-run">How to run?</h2>
+<ol>
+<li>
+<p>Run <code>make init</code>. This command to create folder translations and two files: active.en.toml and active.es.toml</p>
+</li>
+<li>
+<p>Add the necessary messages in <code>active.en.toml</code>, for example:</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="s2">&#34;Error unexpected&#34;</span><span class="p">]</span>
+<span class="nx">one</span> <span class="p">=</span> <span class="s2">&#34;Error unexpected&#34;</span>
+<span class="nx">other</span> <span class="p">=</span> <span class="s2">&#34;Error unexpected&#34;</span>
+
+<span class="p">[</span><span class="nx">OK</span><span class="p">]</span>
+<span class="nx">one</span> <span class="p">=</span> <span class="s2">&#34;OK 200&#34;</span>
+<span class="nx">other</span> <span class="p">=</span> <span class="s2">&#34;OK 200&#34;</span>
+
+<span class="p">[</span><span class="s2">&#34;Request malformed&#34;</span><span class="p">]</span>
+<span class="nx">one</span> <span class="p">=</span> <span class="s2">&#34;Failed to binding request&#34;</span>
+<span class="nx">other</span> <span class="p">=</span> <span class="s2">&#34;Failed to binding request&#34;</span>
+</code></pre></div><ol start="3">
+<li>Run <code>make gen</code>. This command make active.es.toml to translate.es.toml and in this file we will to add spanish translations, for example:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="nx">OK</span><span class="p">]</span>
+<span class="nx">hash</span> <span class="p">=</span> <span class="s2">&#34;sha1-3c44e60f668525352909fc17dc5d4ce4c3fbe4f6&#34;</span>
+<span class="nx">one</span> <span class="p">=</span> <span class="s2">&#34;Todo bien 🚀&#34;</span>
+<span class="nx">other</span> <span class="p">=</span> <span class="s2">&#34;Todo bien 👍&#34;</span>
+</code></pre></div><ol start="4">
+<li>
+<p>Run <code>make finish</code>. This command move the content from translate.es.toml to active.es.toml</p>
+</li>
+<li>
+<p>Ready! We have the translation files, now let go do the magic.</p>
+</li>
+</ol>
+<h2 id="advantages">Advantages</h2>
 <p>Here are the advantages of using i18n (internationalization) in Go:</p>
 <ol>
 <li>
@@ -332,7 +366,9 @@ Today we are going to talk about i18n. I have to say that it is very interesting
 <p>Easier compliance with local language and cultural requirements.</p>
 </li>
 </ol>
+<h2 id="conclusion">Conclusion</h2>
 <p>In summary, i18n in Go allows for improved user experience, better code organization, increased flexibility and reach, and easier compliance with local language and cultural requirements.</p>
+<p>Thank you very much for making it this far. 😍</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
