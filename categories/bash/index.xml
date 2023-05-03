@@ -3,18 +3,7 @@
         <title>bash - Category - Juan Gabriel Machuca</title>
         <link>https://juanmachuca95.github.io/categories/bash/</link>
         <description>bash - Category - Juan Gabriel Machuca</description>
-        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 31 Jan 2023 21:02:15 -0300</lastBuildDate><atom:link href="https://juanmachuca95.github.io/categories/bash/" rel="self" type="application/rss+xml" /><item>
-    <title>Let&#39;s talk about gorutines</title>
-    <link>https://juanmachuca95.github.io/posts/lets_talk_about_gorutines/</link>
-    <pubDate>Tue, 31 Jan 2023 21:02:15 -0300</pubDate>
-    <author>Juan Gabriel Machuca</author>
-    <guid>https://juanmachuca95.github.io/posts/lets_talk_about_gorutines/</guid>
-    <description><![CDATA[I have to say that my relationship with the goruntins not is the bests, However, I am deeply attracted to gorutins.
-Ok, let&rsquo;s skip the romantic part and get down to the nitty-gritty.
-I have a dream I have a dream? Yes, this question should be &ldquo;I have a problem&rdquo;, but it&rsquo;s not enought funny to admit that I do.
-In an ideal world I would have a lot of heavy tasks, running concurrently that I could cancel at any time, without worrying about memory leaks, race conditions or synchronization scheduling.]]></description>
-</item>
-<item>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 03 Dec 2022 19:46:43 -0300</lastBuildDate><atom:link href="https://juanmachuca95.github.io/categories/bash/" rel="self" type="application/rss+xml" /><item>
     <title>How to deploy theme LoveIt in GitHub Pages</title>
     <link>https://juanmachuca95.github.io/posts/how_to_deploy_theme_loveit_in_github_pages/</link>
     <pubDate>Sat, 03 Dec 2022 19:46:43 -0300</pubDate>

@@ -13,6 +13,15 @@
 What is Generics? Go is a statically and strongly typed programming language. This means that variables must be declared with a specific type and this type cannot change during program execution. In addition, operations on variables and expressions must be type compatible.]]></description>
 </item>
 <item>
+    <title>How to use i18n in golang?</title>
+    <link>https://juanmachuca95.github.io/posts/how_to_use_i18n_in_golang/</link>
+    <pubDate>Sun, 26 Mar 2023 11:26:08 -0300</pubDate>
+    <author>Juan Machuca</author>
+    <guid>https://juanmachuca95.github.io/posts/how_to_use_i18n_in_golang/</guid>
+    <description><![CDATA[Hi, it&rsquo;s me again. I may not keep my promise to do a post every month, but in my defense I had to move to another place, which made it harder to pay attention to the blog. Anyway, I&rsquo;m back, to continue.
+Today we are going to talk about i18n. I have to say that it is very interesting for me, because I didn&rsquo;t know much about it. So . .]]></description>
+</item>
+<item>
     <title>Let&#39;s talk about gorutines</title>
     <link>https://juanmachuca95.github.io/posts/lets_talk_about_gorutines/</link>
     <pubDate>Tue, 31 Jan 2023 21:02:15 -0300</pubDate>
