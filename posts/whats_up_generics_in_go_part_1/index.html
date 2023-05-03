@@ -32,7 +32,7 @@ What is Generics? Go is a statically and strongly typed programming language. Th
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/juanmachuca95.github.io\/posts\/whats_up_generics_in_go_part_1\/"
-        },"genre": "posts","keywords": "Go","wordcount":  947 ,
+        },"genre": "posts","keywords": "Go","wordcount":  952 ,
         "url": "https:\/\/juanmachuca95.github.io\/posts\/whats_up_generics_in_go_part_1\/","datePublished": "2023-05-01T16:26:09-03:00","dateModified": "2023-05-01T16:26:09-03:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -74,7 +74,7 @@ What is Generics? Go is a statically and strongly typed programming language. Th
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">What's up with generics in Go? Part 1</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Juan Gabriel Machuca</a></span>&nbsp;<span class="post-category">included in <a href="/categories/go/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>go</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-01">2023-05-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;947 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-01">2023-05-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;952 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -154,7 +154,7 @@ What is Generics? Go is a statically and strongly typed programming language. Th
 <p>Then, the function iterates over each element of the input list &ldquo;data&rdquo; and applies the function &ldquo;f&rdquo; to each element. The result of the function &ldquo;f&rdquo; is added to the element slice &ldquo;T&rdquo; using the function &ldquo;append&rdquo;.</p>
 <p>Finally, the function returns a generic structure &ldquo;GenericStruct&rdquo; containing the element slice &ldquo;T&rdquo; created in the previous step.</p>
 <h3 id="are-you-wondering-why-someone-will-do-that">Are you wondering why someone will do that?</h3>
-<p>I was just testing the strength of generics and how far we could go, and this just seems like a crude example out of my hands, still fascinating.</p>
+<p>I was testing the strength of generics and how far we could go and while writing the post I managed to make this function which I found fascinating, I hope you do too.</p>
 <p>It&rsquo;s now time to check it out!</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Transform the string elements to User elements using the given function
 </span><span class="c1"></span><span class="nx">elementsCreated</span> <span class="o">:=</span> <span class="nf">TransformElements</span><span class="p">([]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;Miguel&#34;</span><span class="p">,</span> <span class="s">&#34;Juan&#34;</span><span class="p">,</span> <span class="s">&#34;Carlos&#34;</span><span class="p">},</span> <span class="kd">func</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="nx">User</span> <span class="p">{</span>
