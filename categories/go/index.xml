@@ -3,7 +3,16 @@
         <title>go - Category - Juan Gabriel Machuca</title>
         <link>https://juanmachuca95.github.io/categories/go/</link>
         <description>go - Category - Juan Gabriel Machuca</description>
-        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 31 Jan 2023 21:02:15 -0300</lastBuildDate><atom:link href="https://juanmachuca95.github.io/categories/go/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 01 May 2023 16:26:09 -0300</lastBuildDate><atom:link href="https://juanmachuca95.github.io/categories/go/" rel="self" type="application/rss+xml" /><item>
+    <title>What&#39;s up with generics in Go? Part 1</title>
+    <link>https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/</link>
+    <pubDate>Mon, 01 May 2023 16:26:09 -0300</pubDate>
+    <author>Juan Gabriel Machuca</author>
+    <guid>https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/</guid>
+    <description><![CDATA[📝 A lot of water passed under the bridge since Generics came to Golang. This water did not pass in front of me, but today, together, let&rsquo;s rediscover &ldquo;Generics&rdquo; 💪.
+What is Generics? Go is a statically and strongly typed programming language. This means that variables must be declared with a specific type and this type cannot change during program execution. In addition, operations on variables and expressions must be type compatible.]]></description>
+</item>
+<item>
     <title>Let&#39;s talk about gorutines</title>
     <link>https://juanmachuca95.github.io/posts/lets_talk_about_gorutines/</link>
     <pubDate>Tue, 31 Jan 2023 21:02:15 -0300</pubDate>

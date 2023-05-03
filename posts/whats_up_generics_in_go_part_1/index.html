@@ -32,7 +32,7 @@ What is Generics? Go is a statically and strongly typed programming language. Th
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/juanmachuca95.github.io\/posts\/whats_up_generics_in_go_part_1\/"
-        },"genre": "posts","keywords": "Go","wordcount":  978 ,
+        },"genre": "posts","keywords": "Go","wordcount":  947 ,
         "url": "https:\/\/juanmachuca95.github.io\/posts\/whats_up_generics_in_go_part_1\/","datePublished": "2023-05-01T16:26:09-03:00","dateModified": "2023-05-01T16:26:09-03:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -73,8 +73,8 @@ What is Generics? Go is a statically and strongly typed programming language. Th
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">What's up with generics in Go? Part 1</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Juan Gabriel Machuca</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-01">2023-05-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;978 words&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Juan Gabriel Machuca</a></span>&nbsp;<span class="post-category">included in <a href="/categories/go/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>go</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-01">2023-05-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;947 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -134,24 +134,12 @@ What is Generics? Go is a statically and strongly typed programming language. Th
 <span class="o">-</span><span class="p">&gt;</span> <span class="kc">true</span>
 </code></pre></div><h2 id="whats-happening-here-">What&rsquo;s happening here? 🤯</h2>
 <p>This is beautiful, a bit confusing but beautiful nonetheless. Note that we are still specifying types, Go is still strongly and statically typed. But, thanks to <code>[T any]</code> we can tell go that Data can be anything.</p>
-<p>Try another thing:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Se define una lista de números enteros
-</span><span class="c1"></span><span class="nx">numbers</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
-
-<span class="c1">// Se aplica una función que eleva al cuadrado cada número
-</span><span class="c1"></span><span class="nx">squaredNumbers</span> <span class="o">:=</span> <span class="nf">Apply</span><span class="p">(</span><span class="nx">numbers</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">num</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="nx">num</span>
-<span class="p">})</span>
-
-<span class="c1">// Se aplica una función que convierte cada número a una cadena de texto
-</span><span class="c1"></span><span class="nx">stringNumbers</span> <span class="o">:=</span> <span class="nf">Apply</span><span class="p">(</span><span class="nx">numbers</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">num</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">Itoa</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span>
-<span class="p">})</span>
-
-<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">squaredNumbers</span><span class="p">)</span> <span class="c1">// Output: [1 4 9 16 25]
-</span><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">stringNumbers</span><span class="p">)</span>  <span class="c1">// Output: [&#34;1&#34; &#34;2&#34; &#34;3&#34; &#34;4&#34; &#34;5&#34;]
-</span><span class="c1"></span>
-</code></pre></div><h2 id="lets-go-crazy-">Let&rsquo;s go crazy 🤣</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Using generic struct
+</span><span class="c1"></span><span class="kd">type</span> <span class="nx">GenericStruct</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">]</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">Data</span> <span class="nx">T</span>
+<span class="p">}</span>
+</code></pre></div><p><!-- raw HTML omitted -->Note:<!-- raw HTML omitted --> The GenericStruct[T any] structure, which has a single Data field of type T. The syntax [T any] indicates that T can be any type, including user-defined types such as User or built-in types such as string and bool.</p>
+<h2 id="lets-go-crazy-">Let&rsquo;s go crazy 🤣</h2>
 <p>If this is your first time seeing generics on the fly, this could ruin your day. Take your time to analyze it together.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nx">TransformElements</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">,</span> <span class="nx">U</span> <span class="nx">any</span><span class="p">](</span><span class="nx">data</span> <span class="p">[]</span><span class="nx">U</span><span class="p">,</span> <span class="nx">f</span> <span class="kd">func</span><span class="p">(</span><span class="nx">u</span> <span class="nx">U</span><span class="p">)</span> <span class="nx">T</span><span class="p">)</span> <span class="nx">GenericStruct</span><span class="p">[[]</span><span class="nx">T</span><span class="p">]</span> <span class="p">{</span>
 	<span class="kd">var</span> <span class="nx">elements</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">T</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
