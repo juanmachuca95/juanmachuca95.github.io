@@ -1,38 +1,43 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>What&#39;s up with generics in Go? Part 1 - Juan Gabriel Machuca</title><meta name="Description" content="My personal blog where I posted interesting things."><meta property="og:title" content="What&#39;s up with generics in Go? Part 1" />
-<meta property="og:description" content="📝 A lot of water passed under the bridge since Generics came to Golang. This water did not pass in front of me, but today, together, let&rsquo;s rediscover &ldquo;Generics&rdquo; 💪.
-What is Generics? Go is a statically and strongly typed programming language. This means that variables must be declared with a specific type and this type cannot change during program execution. In addition, operations on variables and expressions must be type compatible." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" /><meta property="og:image" content="https://juanmachuca95.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-05-01T16:26:09-03:00" />
-<meta property="article:modified_time" content="2023-05-01T16:26:09-03:00" /><meta property="og:site_name" content="My cool site" />
+        <title>What&#39;s up with generics in Go? Part 1 - Juan Gabriel Machuca</title><meta name="Description" content="My personal blog where I posted interesting things."><meta property="og:url" content="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/">
+  <meta property="og:site_name" content="Juan Gabriel Machuca">
+  <meta property="og:title" content="What&#39;s up with generics in Go? Part 1">
+  <meta property="og:description" content="📝 A lot of water passed under the bridge since Generics came to Golang. This water did not pass in front of me, but today, together, let’s rediscover “Generics” 💪.
+What is Generics? Go is a statically and strongly typed programming language. This means that variables must be declared with a specific type and this type cannot change during program execution. In addition, operations on variables and expressions must be type compatible.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-05-01T16:26:09-03:00">
+    <meta property="article:modified_time" content="2023-05-01T16:26:09-03:00">
+    <meta property="article:tag" content="Go">
+    <meta property="og:image" content="https://juanmachuca95.github.io/logo.png">
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://juanmachuca95.github.io/logo.png"/>
-
-<meta name="twitter:title" content="What&#39;s up with generics in Go? Part 1"/>
-<meta name="twitter:description" content="📝 A lot of water passed under the bridge since Generics came to Golang. This water did not pass in front of me, but today, together, let&rsquo;s rediscover &ldquo;Generics&rdquo; 💪.
-What is Generics? Go is a statically and strongly typed programming language. This means that variables must be declared with a specific type and this type cannot change during program execution. In addition, operations on variables and expressions must be type compatible."/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://juanmachuca95.github.io/logo.png">
+  <meta name="twitter:title" content="What&#39;s up with generics in Go? Part 1">
+  <meta name="twitter:description" content="📝 A lot of water passed under the bridge since Generics came to Golang. This water did not pass in front of me, but today, together, let’s rediscover “Generics” 💪.
+What is Generics? Go is a statically and strongly typed programming language. This means that variables must be declared with a specific type and this type cannot change during program execution. In addition, operations on variables and expressions must be type compatible.">
 <meta name="application-name" content="My cool site">
-<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="apple-mobile-web-app-title" content="My cool site">
+<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" /><link rel="prev" href="https://juanmachuca95.github.io/posts/how_to_use_i18n_in_golang/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" /><link rel="prev" href="https://juanmachuca95.github.io/posts/how_to_use_i18n_in_golang/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "What's up with generics in Go? Part 1",
-        "inLanguage": "",
+        "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/juanmachuca95.github.io\/posts\/whats_up_generics_in_go_part_1\/"
-        },"genre": "posts","keywords": "Go","wordcount":  952 ,
+        },"genre": "posts","keywords": "Go","wordcount":  953 ,
         "url": "https:\/\/juanmachuca95.github.io\/posts\/whats_up_generics_in_go_part_1\/","datePublished": "2023-05-01T16:26:09-03:00","dateModified": "2023-05-01T16:26:09-03:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -41,7 +46,7 @@ What is Generics? Go is a statically and strongly typed programming language. Th
             },"description": ""
     }
     </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
@@ -73,8 +78,8 @@ What is Generics? Go is a statically and strongly typed programming language. Th
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">What's up with generics in Go? Part 1</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Juan Gabriel Machuca</a></span>&nbsp;<span class="post-category">included in <a href="/categories/go/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>go</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-01">2023-05-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;952 words&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Juan Gabriel Machuca</a></span>&nbsp;<span class="post-category">included in <a href="/categories/go/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Go</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-01">2023-05-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;953 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -102,53 +107,68 @@ What is Generics? Go is a statically and strongly typed programming language. Th
 <h1 id="lets-play-a-little-bit">Let&rsquo;s play a little bit</h1>
 <p>We know that we can transform a non-generic function to generic function by following a few rules. But, what about with the structs?. We try to response this question.</p>
 <h2 id="generic-struct">Generic Struct?</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">User</span> <span class="kd">struct</span> <span class="p">{</span>
-    <span class="nx">Name</span> <span class="kt">string</span> 
-<span class="p">}</span>
-
-<span class="c1">// Using generic struct
-</span><span class="c1"></span><span class="kd">type</span> <span class="nx">GenericStruct</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">]</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">Data</span> <span class="nx">T</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// Normal use
-</span><span class="c1"></span>	<span class="nx">user</span> <span class="o">:=</span> <span class="nx">User</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Juan&#34;</span><span class="p">}</span>
-	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span>
-
-	<span class="c1">// With generic
-</span><span class="c1"></span>	<span class="nx">userString</span> <span class="o">:=</span> <span class="nx">GenericStruct</span><span class="p">[</span><span class="kt">string</span><span class="p">]{</span><span class="nx">Data</span><span class="p">:</span> <span class="s">&#34;Juan&#34;</span><span class="p">}</span> <span class="c1">// Like string
-</span><span class="c1"></span>	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">userString</span><span class="p">.</span><span class="nx">Data</span><span class="p">)</span>
-
-	<span class="nx">userEntity</span> <span class="o">:=</span> <span class="nx">GenericStruct</span><span class="p">[</span><span class="nx">User</span><span class="p">]{</span><span class="nx">Data</span><span class="p">:</span> <span class="nx">user</span><span class="p">}</span> <span class="c1">// Like User struct
-</span><span class="c1"></span>	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">userEntity</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span>
-
-	<span class="nx">userBool</span> <span class="o">:=</span> <span class="nx">GenericStruct</span><span class="p">[</span><span class="kt">bool</span><span class="p">]{</span><span class="nx">Data</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="c1">// Like a bool? XD
-</span><span class="c1"></span>	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">userBool</span><span class="p">.</span><span class="nx">Data</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c1">// Output:
-</span><span class="c1"></span><span class="o">-</span><span class="p">&gt;</span> <span class="nx">Juan</span>
-<span class="o">-</span><span class="p">&gt;</span> <span class="nx">Juan</span>
-<span class="o">-</span><span class="p">&gt;</span> <span class="nx">Juan</span>
-<span class="o">-</span><span class="p">&gt;</span> <span class="kc">true</span>
-</code></pre></div><h2 id="whats-happening-here-">What&rsquo;s happening here? 🤯</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-go">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">User</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Name</span> <span class="kt">string</span> 
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Using generic struct</span>
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">GenericStruct</span><span class="p">[</span><span class="nx">T</span> <span class="kt">any</span><span class="p">]</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Data</span> <span class="nx">T</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Normal use</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">user</span> <span class="o">:=</span> <span class="nx">User</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Juan&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// With generic</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">userString</span> <span class="o">:=</span> <span class="nx">GenericStruct</span><span class="p">[</span><span class="kt">string</span><span class="p">]{</span><span class="nx">Data</span><span class="p">:</span> <span class="s">&#34;Juan&#34;</span><span class="p">}</span> <span class="c1">// Like string</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">userString</span><span class="p">.</span><span class="nx">Data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">userEntity</span> <span class="o">:=</span> <span class="nx">GenericStruct</span><span class="p">[</span><span class="nx">User</span><span class="p">]{</span><span class="nx">Data</span><span class="p">:</span> <span class="nx">user</span><span class="p">}</span> <span class="c1">// Like User struct</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">userEntity</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">userBool</span> <span class="o">:=</span> <span class="nx">GenericStruct</span><span class="p">[</span><span class="kt">bool</span><span class="p">]{</span><span class="nx">Data</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="c1">// Like a bool? XD</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">userBool</span><span class="p">.</span><span class="nx">Data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Output:</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="p">&gt;</span> <span class="nx">Juan</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="p">&gt;</span> <span class="nx">Juan</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="p">&gt;</span> <span class="nx">Juan</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="p">&gt;</span> <span class="kc">true</span></span></span></code></pre></div></div>
+<h2 id="whats-happening-here-">What&rsquo;s happening here? 🤯</h2>
 <p>This is beautiful, a bit confusing but beautiful nonetheless. Note that we are still specifying types, Go is still strongly and statically typed. But, thanks to <code>[T any]</code> we can tell go that Data can be anything.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Using generic struct
-</span><span class="c1"></span><span class="kd">type</span> <span class="nx">GenericStruct</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">]</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">Data</span> <span class="nx">T</span>
-<span class="p">}</span>
-</code></pre></div><p><!-- raw HTML omitted -->Note:<!-- raw HTML omitted --> The GenericStruct[T any] structure, which has a single Data field of type T. The syntax [T any] indicates that T can be any type, including user-defined types such as User or built-in types such as string and bool.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-go">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Using generic struct</span>
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">GenericStruct</span><span class="p">[</span><span class="nx">T</span> <span class="kt">any</span><span class="p">]</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Data</span> <span class="nx">T</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p><!-- raw HTML omitted -->Note:<!-- raw HTML omitted --> The GenericStruct[T any] structure, which has a single Data field of type T. The syntax [T any] indicates that T can be any type, including user-defined types such as User or built-in types such as string and bool.</p>
 <h2 id="lets-go-crazy-">Let&rsquo;s go crazy 🤣</h2>
 <p>If this is your first time seeing generics on the fly, this could ruin your day. Take your time to analyze it together.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nx">TransformElements</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">,</span> <span class="nx">U</span> <span class="nx">any</span><span class="p">](</span><span class="nx">data</span> <span class="p">[]</span><span class="nx">U</span><span class="p">,</span> <span class="nx">f</span> <span class="kd">func</span><span class="p">(</span><span class="nx">u</span> <span class="nx">U</span><span class="p">)</span> <span class="nx">T</span><span class="p">)</span> <span class="nx">GenericStruct</span><span class="p">[[]</span><span class="nx">T</span><span class="p">]</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">elements</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">T</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
-	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">item</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">data</span> <span class="p">{</span>
-		<span class="nx">elements</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">elements</span><span class="p">,</span> <span class="nf">f</span><span class="p">(</span><span class="nx">item</span><span class="p">))</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="nx">GenericStruct</span><span class="p">[[]</span><span class="nx">T</span><span class="p">]{</span><span class="nx">Data</span><span class="p">:</span> <span class="nx">elements</span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div><p>This is the &ldquo;TransformElements&rdquo; function. The function takes two generic parameters: &ldquo;T&rdquo; and &ldquo;U&rdquo;. &ldquo;T&rdquo; represents the type of the elements to be created from the input elements and &ldquo;U&rdquo; represents the type of the input elements.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-go">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nx">TransformElements</span><span class="p">[</span><span class="nx">T</span> <span class="kt">any</span><span class="p">,</span> <span class="nx">U</span> <span class="kt">any</span><span class="p">](</span><span class="nx">data</span> <span class="p">[]</span><span class="nx">U</span><span class="p">,</span> <span class="nx">f</span> <span class="kd">func</span><span class="p">(</span><span class="nx">u</span> <span class="nx">U</span><span class="p">)</span> <span class="nx">T</span><span class="p">)</span> <span class="nx">GenericStruct</span><span class="p">[[]</span><span class="nx">T</span><span class="p">]</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">elements</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">T</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">item</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">data</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">elements</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">elements</span><span class="p">,</span> <span class="nf">f</span><span class="p">(</span><span class="nx">item</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">GenericStruct</span><span class="p">[[]</span><span class="nx">T</span><span class="p">]{</span><span class="nx">Data</span><span class="p">:</span> <span class="nx">elements</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>This is the &ldquo;TransformElements&rdquo; function. The function takes two generic parameters: &ldquo;T&rdquo; and &ldquo;U&rdquo;. &ldquo;T&rdquo; represents the type of the elements to be created from the input elements and &ldquo;U&rdquo; represents the type of the input elements.</p>
 <p>The function takes a list of elements of type &ldquo;U&rdquo; called &ldquo;data&rdquo; and a function called &ldquo;f&rdquo; that takes an element of type &ldquo;U&rdquo; and returns an element of type &ldquo;T&rdquo;.</p>
 <p>The function creates an empty slice of &ldquo;T&rdquo; elements using the &ldquo;make&rdquo; function. The second argument of &ldquo;make&rdquo; specifies the initial length of the slice (0) and the third argument specifies the capacity of the slice (the length of the input list &ldquo;data&rdquo;).</p>
 <p>Then, the function iterates over each element of the input list &ldquo;data&rdquo; and applies the function &ldquo;f&rdquo; to each element. The result of the function &ldquo;f&rdquo; is added to the element slice &ldquo;T&rdquo; using the function &ldquo;append&rdquo;.</p>
@@ -156,37 +176,42 @@ What is Generics? Go is a statically and strongly typed programming language. Th
 <h3 id="are-you-wondering-why-someone-will-do-that">Are you wondering why someone will do that?</h3>
 <p>I was testing the strength of generics and how far we could go and while writing the post I managed to make this function which I found fascinating, I hope you do too.</p>
 <p>It&rsquo;s now time to check it out!</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Transform the string elements to User elements using the given function
-</span><span class="c1"></span><span class="nx">elementsCreated</span> <span class="o">:=</span> <span class="nf">TransformElements</span><span class="p">([]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;Miguel&#34;</span><span class="p">,</span> <span class="s">&#34;Juan&#34;</span><span class="p">,</span> <span class="s">&#34;Carlos&#34;</span><span class="p">},</span> <span class="kd">func</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="nx">User</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">User</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="nx">name</span><span class="p">}</span>
-<span class="p">})</span>
-
-<span class="c1">// Transform the uint elements to string elements using the given function
-</span><span class="c1"></span><span class="nx">elementsCreatedTwo</span> <span class="o">:=</span> <span class="nf">TransformElements</span><span class="p">([]</span><span class="kt">uint</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">},</span> <span class="kd">func</span><span class="p">(</span><span class="nx">num</span> <span class="kt">uint</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">Itoa</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nx">num</span><span class="p">))</span>
-<span class="p">})</span>
-
-<span class="c1">// Create a slice of User elements and transform them to string elements using the given function
-</span><span class="c1"></span><span class="nx">users</span> <span class="o">:=</span> <span class="p">[]</span><span class="nx">User</span><span class="p">{</span>
-	<span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Juan&#34;</span><span class="p">},</span>
-	<span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Luis&#34;</span><span class="p">},</span>
-	<span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Marcos&#34;</span><span class="p">},</span>
-<span class="p">}</span>
-<span class="nx">elementsCreatedThree</span> <span class="o">:=</span> <span class="nf">TransformElements</span><span class="p">(</span><span class="nx">users</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">u</span> <span class="nx">User</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">u</span><span class="p">.</span><span class="nx">Name</span>
-<span class="p">})</span>
-
-<span class="c1">// Print the transformed elements to the console
-</span><span class="c1"></span><span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%+v&#34;</span><span class="p">,</span> <span class="nx">elementsCreated</span><span class="p">.</span><span class="nx">Data</span><span class="p">)</span>
-<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%+v&#34;</span><span class="p">,</span> <span class="nx">elementsCreatedTwo</span><span class="p">.</span><span class="nx">Data</span><span class="p">)</span>
-<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%+v&#34;</span><span class="p">,</span> <span class="nx">elementsCreatedThree</span><span class="p">.</span><span class="nx">Data</span><span class="p">)</span>
-
-
-<span class="c1">// Output: 
-</span><span class="c1"></span><span class="o">-</span><span class="p">&gt;</span> <span class="p">[{</span><span class="nx">Name</span><span class="p">:</span><span class="nx">Miguel</span><span class="p">}</span> <span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="nx">Juan</span><span class="p">}</span> <span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="nx">Carlos</span><span class="p">}]</span>
-<span class="o">-</span><span class="p">&gt;</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">12</span><span class="p">]</span>
-<span class="o">-</span><span class="p">&gt;</span> <span class="p">[</span><span class="nx">Juan</span> <span class="nx">Luis</span> <span class="nx">Marcos</span><span class="p">]</span>
-</code></pre></div><h3 id="we-have-created-a-generic-function-">We have created a generic function! 🎊</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-go">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Transform the string elements to User elements using the given function</span>
+</span></span><span class="line"><span class="cl"><span class="nx">elementsCreated</span> <span class="o">:=</span> <span class="nf">TransformElements</span><span class="p">([]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;Miguel&#34;</span><span class="p">,</span> <span class="s">&#34;Juan&#34;</span><span class="p">,</span> <span class="s">&#34;Carlos&#34;</span><span class="p">},</span> <span class="kd">func</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="nx">User</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">User</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="nx">name</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Transform the uint elements to string elements using the given function</span>
+</span></span><span class="line"><span class="cl"><span class="nx">elementsCreatedTwo</span> <span class="o">:=</span> <span class="nf">TransformElements</span><span class="p">([]</span><span class="kt">uint</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">},</span> <span class="kd">func</span><span class="p">(</span><span class="nx">num</span> <span class="kt">uint</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">Itoa</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nx">num</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Create a slice of User elements and transform them to string elements using the given function</span>
+</span></span><span class="line"><span class="cl"><span class="nx">users</span> <span class="o">:=</span> <span class="p">[]</span><span class="nx">User</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Juan&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Luis&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Marcos&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">elementsCreatedThree</span> <span class="o">:=</span> <span class="nf">TransformElements</span><span class="p">(</span><span class="nx">users</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">u</span> <span class="nx">User</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">u</span><span class="p">.</span><span class="nx">Name</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Print the transformed elements to the console</span>
+</span></span><span class="line"><span class="cl"><span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%+v&#34;</span><span class="p">,</span> <span class="nx">elementsCreated</span><span class="p">.</span><span class="nx">Data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%+v&#34;</span><span class="p">,</span> <span class="nx">elementsCreatedTwo</span><span class="p">.</span><span class="nx">Data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%+v&#34;</span><span class="p">,</span> <span class="nx">elementsCreatedThree</span><span class="p">.</span><span class="nx">Data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Output: </span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="p">&gt;</span> <span class="p">[{</span><span class="nx">Name</span><span class="p">:</span><span class="nx">Miguel</span><span class="p">}</span> <span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="nx">Juan</span><span class="p">}</span> <span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="nx">Carlos</span><span class="p">}]</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="p">&gt;</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">12</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="p">&gt;</span> <span class="p">[</span><span class="nx">Juan</span> <span class="nx">Luis</span> <span class="nx">Marcos</span><span class="p">]</span></span></span></code></pre></div></div>
+<h3 id="we-have-created-a-generic-function-">We have created a generic function! 🎊</h3>
 <p>Aunque pueda parecer todo muy bonito e extravangante, almenos para mi lo fue al principio. Hay aún muchas cosas que tener en cuenta a la hora de utilizar genericos. Es posible que al ver esto, una cosquilla dentro de tí te impulse a querer generalizar todo lo que encuentres a tu paso, solo te diré en esta primera parte, que tengas cuidado!</p>
 <h2 id="conclusión">Conclusión</h2>
 <p>In my humble opinion, generics have changed the way we can program in Go to a great extent. They encourage us to be creative and plan solutions with a different approach, which is what I like most about them.</p>
@@ -203,7 +228,7 @@ What is Generics? Go is a statically and strongly typed programming language. Th
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" data-title="What&#39;s up with generics in Go? Part 1" data-hashtags="Go"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" data-hashtag="Go"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" data-title="What&#39;s up with generics in Go? Part 1"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" data-title="What&#39;s up with generics in Go? Part 1"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" data-title="What&#39;s up with generics in Go? Part 1"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" data-title="What&#39;s up with generics in Go? Part 1" data-hashtags="Go"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" data-title="What&#39;s up with generics in Go? Part 1"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" data-hashtag="Go"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" data-title="What&#39;s up with generics in Go? Part 1"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" data-title="What&#39;s up with generics in Go? Part 1"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@14.9.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" data-title="What&#39;s up with generics in Go? Part 1"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/" data-title="What&#39;s up with generics in Go? Part 1" data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=https%3a%2f%2fjuanmachuca95.github.io%2fposts%2fwhats_up_generics_in_go_part_1%2f&amp;text=What%27s%20up%20with%20generics%20in%20Go%3f%20Part%201" target="_blank" title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -219,14 +244,17 @@ What is Generics? Go is a statically and strongly typed programming language. Th
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by Hugo | Theme LoveIt - <i class="fa fa-feather"></i> Juan Gabriel Machuca</div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by Hugo | Theme LoveIt - <i class="fa fa-feather"></i> Juan Gabriel Machuca</div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span></div>
         </div>
     </footer></div>
 
         <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
                 <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"data":{"id-1":"MyBlog","id-2":"MyBlog"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script>window.config={"comment":{},"data":{"id-1":"MyBlog","id-2":"MyBlog"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script src="/js/theme.min.js"></script></body>
 </html>

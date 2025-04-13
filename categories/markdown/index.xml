@@ -3,15 +3,22 @@
         <title>Markdown - Category - Juan Gabriel Machuca</title>
         <link>https://juanmachuca95.github.io/categories/markdown/</link>
         <description>Markdown - Category - Juan Gabriel Machuca</description>
-        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 03 Dec 2022 19:46:43 -0300</lastBuildDate><atom:link href="https://juanmachuca95.github.io/categories/markdown/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 03 Dec 2022 19:46:43 -0300</lastBuildDate><atom:link href="https://juanmachuca95.github.io/categories/markdown/" rel="self" type="application/rss+xml" /><item>
     <title>How to deploy theme LoveIt in GitHub Pages</title>
     <link>https://juanmachuca95.github.io/posts/how_to_deploy_theme_loveit_in_github_pages/</link>
     <pubDate>Sat, 03 Dec 2022 19:46:43 -0300</pubDate>
     <author>Juan Gabriel Machuca</author>
     <guid>https://juanmachuca95.github.io/posts/how_to_deploy_theme_loveit_in_github_pages/</guid>
-    <description><![CDATA[My blog uses hugo with the LoveIt theme that I use to publish this post and all deployed on GitHub Pages. So, in this post we are going to talk about how we can do that.
-1 Requeriments: First of all, we need a couple of things before we start, here is my list.
- You have to install hugo 👉 Installation Read documentation of the amazing LoveIt theme LoveIt Read notes GitHubPages  2 Setup First of all we need to setup project in local, this firsts step you can see also in basic configuration]]></description>
+    <description><![CDATA[<p>My blog uses hugo with the LoveIt theme that I use to publish this post and all deployed on GitHub Pages. So, in this post we are going to talk about how we can do that.</p>
+<h2 id="1-requeriments">1 Requeriments:</h2>
+<p>First of all, we need a couple of things before we start, here is my list.</p>
+<ul>
+<li>You have to install hugo 👉 <a href="https://gohugo.io/installation/" target="_blank" rel="noopener noreffer ">Installation</a></li>
+<li>Read documentation of the amazing LoveIt theme <a href="https://hugoloveit.com/categories/documentation/" target="_blank" rel="noopener noreffer ">LoveIt</a></li>
+<li>Read notes <a href="https://pages.github.com/" target="_blank" rel="noopener noreffer ">GitHubPages</a></li>
+</ul>
+<h2 id="2-setup">2 Setup</h2>
+<p>First of all we need to setup project in local, this firsts step you can see also in <a href="https://hugoloveit.com/theme-documentation-basics/#basic-configuration" target="_blank" rel="noopener noreffer ">basic configuration</a></p>]]></description>
 </item>
 </channel>
 </rss>
