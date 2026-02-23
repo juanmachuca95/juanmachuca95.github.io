@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>AI - Tag - Juan Gabriel Machuca</title>
-        <link>https://juanmachuca95.github.io/tags/ai/</link>
-        <description>AI - Tag - Juan Gabriel Machuca</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 08 Feb 2026 00:18:14 -0300</lastBuildDate><atom:link href="https://juanmachuca95.github.io/tags/ai/" rel="self" type="application/rss+xml" /><item>
+        <title>Thinking Out Loud - Tag - Juan Gabriel Machuca</title>
+        <link>https://juanmachuca95.github.io/tags/thinking-out-loud/</link>
+        <description>Thinking Out Loud - Tag - Juan Gabriel Machuca</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 08 Feb 2026 00:18:14 -0300</lastBuildDate><atom:link href="https://juanmachuca95.github.io/tags/thinking-out-loud/" rel="self" type="application/rss+xml" /><item>
     <title>Thinking Out Loud - Episode 1: Dreaming the solution</title>
     <link>https://juanmachuca95.github.io/posts/thinking_out_loud_ep_1/</link>
     <pubDate>Sun, 08 Feb 2026 00:18:14 -0300</pubDate>
