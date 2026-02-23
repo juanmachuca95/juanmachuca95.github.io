@@ -1,0 +1,55 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - Category - Juan Gabriel Machuca</title>
+        <link>https://juanmachuca95.github.io/categories/</link>
+        <description>Categories - Category - Juan Gabriel Machuca</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 01 May 2023 16:26:09 -0300</lastBuildDate><atom:link href="https://juanmachuca95.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Go</title>
+    <link>https://juanmachuca95.github.io/categories/go/</link>
+    <pubDate>Mon, 01 May 2023 16:26:09 -0300</pubDate>
+    <author>xxxx</author>
+    <guid>https://juanmachuca95.github.io/categories/go/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Bash</title>
+    <link>https://juanmachuca95.github.io/categories/bash/</link>
+    <pubDate>Sat, 03 Dec 2022 19:46:43 -0300</pubDate>
+    <author>xxxx</author>
+    <guid>https://juanmachuca95.github.io/categories/bash/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>GitHub</title>
+    <link>https://juanmachuca95.github.io/categories/github/</link>
+    <pubDate>Sat, 03 Dec 2022 19:46:43 -0300</pubDate>
+    <author>xxxx</author>
+    <guid>https://juanmachuca95.github.io/categories/github/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Hugo</title>
+    <link>https://juanmachuca95.github.io/categories/hugo/</link>
+    <pubDate>Sat, 03 Dec 2022 19:46:43 -0300</pubDate>
+    <author>xxxx</author>
+    <guid>https://juanmachuca95.github.io/categories/hugo/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Markdown</title>
+    <link>https://juanmachuca95.github.io/categories/markdown/</link>
+    <pubDate>Sat, 03 Dec 2022 19:46:43 -0300</pubDate>
+    <author>xxxx</author>
+    <guid>https://juanmachuca95.github.io/categories/markdown/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Personal</title>
+    <link>https://juanmachuca95.github.io/categories/personal/</link>
+    <pubDate>Wed, 30 Nov 2022 22:04:08 -0300</pubDate>
+    <author>xxxx</author>
+    <guid>https://juanmachuca95.github.io/categories/personal/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

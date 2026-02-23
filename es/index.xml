@@ -1,0 +1,9 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Juan Gabriel Machuca</title>
+        <link>https://juanmachuca95.github.io/es/</link>
+        <description>Mi blog personal donde publico cosas interesantes.</description>
+        <generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sun, 08 Feb 2026 00:18:14 -0300</lastBuildDate>
+            <atom:link href="https://juanmachuca95.github.io/es/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
+</rss>
