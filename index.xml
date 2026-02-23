@@ -6,6 +6,25 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 08 Feb 2026 00:18:14 -0300</lastBuildDate>
             <atom:link href="https://juanmachuca95.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Thinking Out Loud - Episode 1: Dreaming the solution</title>
+    <link>https://juanmachuca95.github.io/posts/thinking_out_loud_ep_1/</link>
+    <pubDate>Sun, 08 Feb 2026 00:18:14 -0300</pubDate>
+    <author>xxxx</author>
+    <guid>https://juanmachuca95.github.io/posts/thinking_out_loud_ep_1/</guid>
+    <description><![CDATA[<h2 id="dreaming-the-solution-">Dreaming the solution 💤</h2>
+<p>Have you ever been so absorbed by a problem for hours or even days that suddenly, <em>you got it</em>?!
+That feeling is very special. It comes in a lot of different ways. Maybe by talking with another person about their things, listening to music to relax or - the most spectacular for me - when it comes from a dream. <strong>Has it happened to you?</strong></p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some researchers call this <strong><strong>&ldquo;Dream incubation&rdquo;</strong></strong>: seed a question, issue or intention before sleep while the brain processes it during the dream.</div>
+        </div>
+    </div>
+<p>Thinking about it, I wonder how long it&rsquo;s been since the last time. <em>So long!</em>, I have to say.</p>]]></description>
+</item>
+<item>
     <title>What&#39;s up with generics in Go? Part 1</title>
     <link>https://juanmachuca95.github.io/posts/whats_up_generics_in_go_part_1/</link>
     <pubDate>Mon, 01 May 2023 16:26:09 -0300</pubDate>

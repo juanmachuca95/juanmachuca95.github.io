@@ -5,5 +5,24 @@
         <description>Mi blog personal donde publico cosas interesantes.</description>
         <generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sun, 08 Feb 2026 00:18:14 -0300</lastBuildDate>
             <atom:link href="https://juanmachuca95.github.io/es/index.xml" rel="self" type="application/rss+xml" />
-        </channel>
+        <item>
+    <title>Pensando en voz alta - Episodio 1: Soñar con la solución</title>
+    <link>https://juanmachuca95.github.io/es/posts/thinking_out_loud_ep_1/</link>
+    <pubDate>Sun, 08 Feb 2026 00:18:14 -0300</pubDate>
+    <author>xxxx</author>
+    <guid>https://juanmachuca95.github.io/es/posts/thinking_out_loud_ep_1/</guid>
+    <description><![CDATA[<h2 id="soñando-la-solución-">Soñando la solución 💤</h2>
+<p>¿Alguna vez estuviste tan absorto en un problema durante horas o incluso días que, de repente, <em>lo resolviste</em>?!
+Esa sensación es muy especial. Llega de muchas formas diferentes. Quizás hablando con otra persona sobre sus cosas, escuchando música para relajarte, o - la más espectacular para mí - cuando sale de un sueño. <strong>¿Te ha pasado?</strong></p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Dato<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Algunos investigadores llaman a esto <strong><strong>&ldquo;Incubación de sueños&rdquo;</strong></strong>: sembrar una pregunta, problema o intención antes de dormir mientras el cerebro lo procesa durante el sueño.</div>
+        </div>
+    </div>
+<p>Pensándolo bien, me pregunto cuánto tiempo pasó desde la última vez. <em>¡Mucho tiempo!</em>, debo decir.</p>]]></description>
+</item>
+</channel>
 </rss>
